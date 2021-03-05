@@ -78,6 +78,12 @@
     .latestFeedContainer > div, .latestFeedContainer .hookImgHolder, .latestFeedContainer .hookImgHolder img,.latestFeedContainer .hookStats{
         width: 220px;
     }
+    .latestFeedContainer > div {
+        height:210px ;
+    }
+    .latestFeedContainer .hookImgHolder, .latestFeedContainer .hookImgHolder img {
+        height: 180px;
+    }
    
 }
 @media screen and (max-width:490px){

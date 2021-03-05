@@ -13,6 +13,9 @@
     border-radius: 10px;
     background-color: #fff;
 }
+.image img{
+    width: 140px;
+}   
 
 .stats {
     background: #f2f5f8 !important;
@@ -40,4 +43,16 @@
 .rating {
     font-size: 10px;
     color: #a1aab9;
+}
+@media screen and (max-width:400px){
+    .usersContainer{
+        width: 1910px;
+    }
+    .card {
+        width: 310px;
+        padding-left: 3px;
+    }
+ .image img{
+     width: 110px;
+ }   
 }

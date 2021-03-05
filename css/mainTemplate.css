@@ -1,6 +1,17 @@
+.intrestBox h1,.hookTitle,.sidebar-wrapper .sidebar-menu ul li a .menu-text,.sidebar-wrapper .sidebar-header .user-info>span {
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
 .pageWrapper {
     padding: 10px;
     padding-bottom: 15px;
+}
+.navbar {
+    padding: 8px 10px;
 }
 .searchBar,.searchBar2 {
     display: flex;
