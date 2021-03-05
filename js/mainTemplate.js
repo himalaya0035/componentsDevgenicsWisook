@@ -67,7 +67,34 @@ for (let i = 0; i < searchCategories.length; i++) {
 }
 
 
-// main template code ends
+let addurlInput = document.getElementById('addHookUrl');
+let addHookMobile = document.getElementById('addHookMobile');
+let body = document.getElementsByTagName('body')[0];
+addHookMobile.onclick = () => {
+  // console.log(body)
+  // if (body.classList.contains('modal-open')){
+  //   addurlInput.focus();
+  //   console.log('focussed')
+  // }
+  setTimeout(()=>{
+    if (body.classList.contains('modal-open')){
+      addurlInput.focus();
+      console.log('focussed')
+    }
+  },500)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
