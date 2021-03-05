@@ -1,5 +1,6 @@
 .pageWrapper {
-    padding: 15px;
+    padding: 10px;
+    padding-bottom: 15px;
 }
 .searchBar,.searchBar2 {
     display: flex;
