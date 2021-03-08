@@ -34,7 +34,6 @@ document.getElementsByClassName('searchIconMobile')[0].onclick = () => {
 }
 document.getElementsByClassName('searchIcon2')[0].onclick = () => {
   searchSection.style.display = 'none';
-
 }
 
 searchInput.oninput = () => {
@@ -46,7 +45,7 @@ searchInput.oninput = () => {
 }
 
 let searchCategories = document.getElementsByClassName('searchCategory');
-// let searchInputs = document.getElementsByClassName('searchInput');
+
 
 for (let i = 0; i < searchCategories.length; i++) {
   searchCategories[i].addEventListener('change', () => {

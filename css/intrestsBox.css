@@ -2,6 +2,7 @@
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
+    flex-wrap: wrap;
   }
   .intrestBox {
     width: 120px;
@@ -39,4 +40,28 @@
   }
   .intrestBox:hover .colorOverlay {
     opacity: 0.7;
+  }
+  .mainPageIntrestBoxs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .mainPageIntrestBoxs .intrestBox {
+    width: 296px;
+    height: 200px;
+    margin-left: 0px;
+    margin-bottom: 18px;
+    font-size: 50px;
+    box-shadow: 0px 0px 3px #fff;
+  }
+  .mainPageIntrestBoxs .intrestBox:hover{
+    transform: scale(1);
+  }
+  .mainPageIntrestBoxs .intrestBox h1{
+    font-size: 22px;
+  }
+  .mainPageIntrestBoxs .colorOverlay{
+    opacity: 0.45;
+    mix-blend-mode:luminosity;
   }
