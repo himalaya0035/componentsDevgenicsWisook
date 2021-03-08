@@ -50,7 +50,7 @@ export function constructSidebar(){
                         <span>Your Intrests</span>
                     </li>
                     ${intrestSection}
-                    <a href="" class="viewAllIntrests">View All</a>
+                    <a href="intrests.html" class="viewAllIntrests">View All</a>
                 </ul>
             </div>
             <!-- sidebar-menu  -->
