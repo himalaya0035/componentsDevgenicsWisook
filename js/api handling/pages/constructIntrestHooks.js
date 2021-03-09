@@ -5,7 +5,7 @@ const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
 
 
-function constructBookmarksList(){ // data here
+function constructIntrestHooksList(){ // data here
     let bookmarksList = '';
     for (let i=0;i<12;i++){
         bookmarksList += hookCard();
@@ -13,7 +13,7 @@ function constructBookmarksList(){ // data here
     return(
         `
         <div class="latestPosts">
-            <h4 style="padding-bottom: 5px; letter-spacing: 1px; color:#f2f2f2">Bookmarked Hooks</h4>
+                <h4 style="padding-bottom: 5px; letter-spacing: 1px; color:#f2f2f2">Latest In Intrest Name</h4>
             <div class="latestFeedContainer">
                 ${bookmarksList}
             </div>
@@ -25,8 +25,8 @@ function constructBookmarksList(){ // data here
 
 
 
-function constructBookmarkPage(){
-    const bookmarksListHtml = constructBookmarksList();
+function constructIntrestHooksPage(){
+    const intrestHooksListHtml = constructIntrestHooksList();
     const sidebarHtml = constructSidebar();
     const navbarHtml = contstructNavbar();
     const pagination = managePagination();
@@ -43,7 +43,7 @@ function constructBookmarkPage(){
                     <i class="fa fa-plus" style="font-size:20px; color: white;"></i>
                 </div>
                 <div class="pageWrapper" style="padding-bottom: 0px;">
-                    ${bookmarksListHtml}
+                    ${intrestHooksListHtml}
                     ${pagination}
                 </div>
                 ${hookModal}
@@ -58,4 +58,4 @@ function constructBookmarkPage(){
     utility.manageOnClickIntrestBox();
 }
 
-constructBookmarkPage();
+constructIntrestHooksPage();

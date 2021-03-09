@@ -140,3 +140,12 @@ export function loadLatestFeedJs() {
     }
   }).observe(pageWrapperTwo);
 }
+
+export function manageOnClickIntrestBox(){
+  const intrestBox = document.getElementsByClassName('intrestBox');
+  for (let i=0;i<intrestBox.length;i++){
+    intrestBox[i].onclick = () =>{
+      window.location.replace('http://127.0.0.1:5500/intrestHooks.html')
+    }
+  }
+}

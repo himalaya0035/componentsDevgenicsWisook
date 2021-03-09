@@ -96,7 +96,7 @@ function constructHomepage(){
     utility.addSlider('.usersScroller');
     utility.addNecessaryEventListeners();
     utility.loadLatestFeedJs();
-      
+    utility.manageOnClickIntrestBox();      
 }
 
 constructHomepage();

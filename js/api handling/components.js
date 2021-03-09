@@ -421,9 +421,6 @@ export function managePagination(){
                                 <li>5</li>
                             </a>
                             <a href="#">
-                                <li>6</li>
-                            </a>
-                            <a href="#">
                                 <li>></li>
                             </a>
                         </ul>
