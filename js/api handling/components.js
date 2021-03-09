@@ -1,5 +1,4 @@
 // sidebar componenents starts
-
 export function constructSidebar(){
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();

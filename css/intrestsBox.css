@@ -65,3 +65,8 @@
     opacity: 0.45;
     mix-blend-mode:luminosity;
   }
+@media screen and (max-width:500px){
+    .intrestBox{
+      width: 115px;
+    }
+}
