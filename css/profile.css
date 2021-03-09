@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .nameAndCredential {
     color: white;
@@ -116,6 +116,7 @@
   }
   .nameAndCredential h3{
     font-size: 20px;
+    margin-bottom: 3px;
   }
   .followersAndFollowing {
     margin-top: 20px;

@@ -15,10 +15,6 @@ export function constructSidebar(){
             </div>
             <!-- sidebar-header  -->
             <div class="sidebar-item sidebar-header d-flex flex-nowrap">
-                <div class="user-pic">
-                    <img class="img-responsive img-rounded" src="img/professor.jpg"
-                        style="width: 58px; height: 58px; object-position: top;" alt="User picture">
-                </div>
                 ${profileData}
             </div>
 
@@ -148,11 +144,15 @@ function constrcutSidebarProfileSection(){
     // make api request here
     return(
         `
+        <div class="user-pic">
+                    <a href="profile.html"><img class="img-responsive img-rounded" src="img/professor.jpg"
+                        style="width: 58px; height: 58px; object-position: top;" alt="User picture"></a>
+        </div>
         <div class="user-info">
-            <span class="user-name">Jhon
-                <strong>Smith</strong>
-            </span>
-            <span class="user-role">Administrator</span>
+            <a href="profile.html"><span class="user-name">Himalaya
+                <strong>Gupta</strong>
+            </span></a>
+            <span class="user-role" style="color:gray; font-size:12px; letter-spacing:1px;">CEO Devgenics</span>
             <span class="user-status">
                 <i class="fa fa-circle"></i>
                 <span>Online</span>
