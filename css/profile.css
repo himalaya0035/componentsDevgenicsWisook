@@ -121,9 +121,7 @@
   .followersAndFollowing {
     margin-top: 20px;
   }
-  .header{
-    height: 235px;
-  }
+ 
 }
 @media screen and (min-width:400px){
   .followersAndFollowing{
