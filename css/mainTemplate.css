@@ -85,7 +85,7 @@
 }
 .searchSection {
     display: none;
-    position: fixed;
+    position: absolute;
     max-width: 450px;
     width: 100%;
     overflow-y: auto;

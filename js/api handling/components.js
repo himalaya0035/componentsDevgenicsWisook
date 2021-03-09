@@ -152,7 +152,7 @@ function constrcutSidebarProfileSection(){
             <a href="profile.html"><span class="user-name">Himalaya
                 <strong>Gupta</strong>
             </span></a>
-            <span class="user-role" style="color:gray; font-size:12px; letter-spacing:1px;">CEO Devgenics</span>
+            <span class="user-role" style="color:gray; font-size:12px; font-weight:bold; letter-spacing:1px;">CEO Devgenics</span>
             <span class="user-status">
                 <i class="fa fa-circle"></i>
                 <span>Online</span>
