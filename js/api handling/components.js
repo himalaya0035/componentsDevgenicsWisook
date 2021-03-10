@@ -107,7 +107,7 @@ export function constructSidebar(){
                         </div>
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-center" href="#">View all notifications</a>
+                    <a class="dropdown-item text-center" href="notifications.html">View all notifications</a>
                 </div>
             </div>
 
