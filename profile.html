@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/latestFeed.css">
     <link rel="stylesheet" href="css/pagination.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/notifications.css">
 </head>
 
 <body>
@@ -31,13 +32,15 @@
         <main class="page-content">
             <div id="overlay" class="overlay"></div>
             <div class="container-fluid" style="padding:0px;">
-               
+
                 <div class="pageWrapper" style="padding: 0px;">
 
                     <div class="header-container">
                         <div class="header">
-                            <a href="/" style="font-weight:bold;text-decoration: none; color: white;font-size: 25px; letter-spacing: 2px;"><i class="fa fa-arrow-left"></i> WISOOK</a>
-                            
+                            <a href="/"
+                                style="font-weight:bold;text-decoration: none; color: white;font-size: 25px; letter-spacing: 2px;"><i
+                                    class="fa fa-arrow-left"></i> WISOOK</a>
+
                         </div>
                         <div class="headerOverlay"></div>
                         <!-- END header -->
@@ -55,39 +58,41 @@
                                     <h6>CEO Devgenics</h6>
                                 </div>
                             </div>
-                            <button class="editProfileBtn btn btn-secondary" data-toggle="modal" data-target="#modalLoginForm"><i class="fa fa-edit"></i> <span>Edit
-                                Profile</span></button>
+                            <button class="editProfileBtn btn btn-secondary" data-toggle="modal"
+                                data-target="#modalLoginForm"><i class="fa fa-edit"></i> <span>Edit
+                                    Profile</span></button>
                         </div>
                         <div class="followersAndFollowing">
-                            <a href=""><span>313</span> Followers</a>
-                            <a href=""><span>290</span> Following</a>
+                            <a href="#" data-toggle="modal"
+                            data-target="#followersFollowing"><span>313</span> Followers</a>
+                            <a href="#" data-toggle="modal"
+                            data-target="#followersFollowing"><span>290</span> Following</a>
                         </div>
-                        <!-- <div class="toggleHooksAndCollections" style="margin-bottom: 15px;">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a data-toggle="tab" href="#home" class="btn btn-secondary">Hooks</a>
-                                <a class="btn btn-secondary" data-toggle="tab" href="#menu1">Collections</a>
-                              </div>
-                        </div> -->
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Hooks</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Collections</a>
-                          </div>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                role="tab" aria-controls="nav-home" aria-selected="true">Hooks</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">Collections</a>
+                        </div>
                         <div class="tab-content" id="nav-tabContent" style="padding-top: 15px;">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
                                 <div class="content">
                                     <div class="hooksContainer">
                                         <div class="topHeader">
-                                            <h5 style="padding-bottom: 0px; letter-spacing: 1px; color:#f2f2f2">User`s Hooks
-                                            </h4>
-                                            <a href="#"
-                                                style="color: white; font-size: 16px; text-decoration: none;">View
-                                                All</a>
+                                            <h5 style="padding-bottom: 0px; letter-spacing: 1px; color:#f2f2f2">User`s
+                                                Hooks
+                                                </h4>
+                                                <a href="#"
+                                                    style="color: white; font-size: 16px; text-decoration: none;">View
+                                                    All</a>
                                         </div>
-                                
+
                                         <div class="hookScroller">
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -110,7 +115,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -133,7 +139,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -156,7 +163,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -179,7 +187,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -202,7 +211,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -225,7 +235,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -248,7 +259,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -271,7 +283,8 @@
                                             </div>
                                             <div class="hookPost">
                                                 <div class="hookImgHolder">
-                                                    <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                                    <img alt=""
+                                                        src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                                                         draggable="false">
                                                     <h5 class="hookTitle">Learn Js The modern Way</h5>
                                                     <i class="fa fa-expand openHook"></i>
@@ -296,50 +309,125 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-                          </div>
-                        
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-profile-tab">...</div>
+                        </div>
+
                     </div>
 
                 </div>
                 <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <form accept-charset="UTF-8" action="#" method="POST"  target="_blank">
-            <div class="form-group">
-              <label for="exampleInputName">Full Name</label>
-              <input type="text" name="fullname" class="form-control" id="exampleInputName" placeholder="Enter your name and surname" required="required">
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body mx-3">
+                                <form accept-charset="UTF-8" action="#" method="POST" target="_blank">
+                                    <div class="form-group">
+                                        <label for="exampleInputName">Full Name</label>
+                                        <input type="text" name="fullname" class="form-control" id="exampleInputName"
+                                            placeholder="Enter your name and surname" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1" required="required">Credential</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Enter Credential (Ex - Teacher)">
+                                    </div>
+                                    <hr>
+                                    <div class="form-group mt-3">
+                                        <label class="mr-2">Update your Profile Image:</label>
+                                        <input type="file" name="file">
+                                    </div>
+                                    <hr>
+                                    <hr>
+                                    <div class="form-group mt-3">
+                                        <label class="mr-2">Update Your Cover Image:</label>
+                                        <input type="file" name="file">
+                                    </div>
+                                    <hr>
+                                    <button type="submit" class="btn btn-secondary btn-sm">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="followersFollowing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title w-100 font-weight-bold">User Followers And Following</h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="overflow-y:auto; height: 500px; padding: 0px;">
+                            <div class="nav nav-tabs"  id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active"  id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-home" aria-selected="true">Following</a>
+                                <a class="nav-item nav-link" id="nav-followers-tab"  data-toggle="tab" href="#nav-followers" role="tab" aria-controls="nav-profile" aria-selected="false">Followers</a>
+                              </div>
+                            <div class="tab-content" id="nav-tabContentTwo">
+                                <div class="tab-pane fade show active" id="nav-following"  role="tabpanel" aria-labelledby="nav-following-tab">
+                                    <div class="notification-ui_dd-content" >
+                                        <div class="notification-list notification-list--unread" style="margin-bottom: 0px; border-bottom: 1px solid black;">
+                                            <div class="notification-list_content">
+                                                <div class="notification-list_img">
+                                                    <a href="profile.html">
+                                                        <img src="img/Amy_Baker25.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="notification-list_detail">
+                                                    <a href="profile.html">
+                                                        <a href="profile.html">
+                                                            <p><b>Brijesh</b></p>
+                                                        </a>
+                                                    </a>
+                                                    <p class="text-muted"><small>developer</small></p>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list_feature-img">
+                                                <button type="button" class="btn btn-secondary btn-sm">Follow</button>
+                                            </div>
+                                        </div>
+                                        <div class="notification-list notification-list--unread">
+                                            <div class="notification-list_content">
+                                                <div class="notification-list_img">
+                                                    <a href="profile.html">
+                                                        <img src="img/batman.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="notification-list_detail">
+                                                    <a href="profile.html">
+                                                        <a href="profile.html">
+                                                            <p><b>Rajesh</b></p>
+                                                        </a>
+                                                    </a>
+                                                    <p class="text-muted"><small>CEO</small></p>
+                                                </div>
+                                            </div>
+                                            <div class="notification-list_feature-img">
+                                                <button type="button" class="btn btn-secondary btn-sm">Following</button>
+                                            </div>
+                                        </div>
+                                
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1" required="required">Credential</label>
-              <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Credential (Ex - Teacher)">
-            </div>
-            <hr>
-            <div class="form-group mt-3">
-              <label class="mr-2">Update your Profile Image:</label>
-              <input type="file" name="file">
-            </div>
-            <hr>
-            <hr>
-            <div class="form-group mt-3">
-              <label class="mr-2">Update Your Cover Image:</label>
-              <input type="file" name="file">
-            </div>
-            <hr>
-            <button type="submit" class="btn btn-primary">Update</button>
-          </form>
-      </div>
-    </div>
-  </div>
-</div>
 
         </main>
 

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/userCard.css">
     <link rel="stylesheet" href="css/latestFeed.css">
     <link rel="stylesheet" href="css/pagination.css">
+    <link rel="stylesheet" href="css/hook.css">
 </head>
 
 <body>
@@ -277,51 +278,99 @@
 
                     </div>
                 </div>
-                <div id="addHookMobile" data-toggle="modal" data-target="#exampleModalCenter">
-                    <i class="fa fa-plus" style="font-size:20px; color: white;"></i>
-                </div>
+                
                 <div class="pageWrapper" style="padding-bottom: 0px;">
-                    <div class="intrestsBoxContainer">
-                        <h4 style="padding-bottom: 5px; letter-spacing: 2px; color:#f2f2f2">Discover New Intrests</h4>
-                        <div class="mainPageIntrestBoxs">
-                            <div class="intrestBox">
-                                <h1>Shopping</h1>
-                                <div class="colorOverlay"></div>
-                                <div class="followOrRemove">
-                                    <i class="fa fa-trash"></i>
+                    <div class="singleHookContainer">
+                        <div class="hookAndDesc">
+                            
+                            <div class="hookPost">
+                               <div class="hookImgHolder">
+                                   <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
+                                       draggable="false">
+                                   <h5 class="hookTitle">Learn Js The modern Way</h5>
+                                   <!-- <i class="fa fa-expand openHook"></i> -->
+                                   <div class="hookOverlay"></div>
+                               </div>
+                               <div class="hookStats">
+                                   <div class="statSection like" title="Like hook">
+                                       <i class="fa fa-heart-o"></i>
+                                   </div>
+                                   <div class="statSection bookmark" title="Bookmark Hook">
+                                       <i class="fa fa-bookmark-o"></i>
+                                   </div>
+                                   <div class="statSection share" title="Share Hook">
+                                       <i class="fa fa-share-alt"></i>
+                                   </div>
+                                   <div class="statSection redirect" title="Visit Url">
+                                       <i class="fa fa-external-link"></i>
+                                   </div>
+                               </div>
+                            </div>
+                            <div class="descAndStats" >
+                                <div class="hookStats2">
+                                    <div class="totalLikes"><i class="fa fa-heart"></i> 3.2k Likes</div>
+                                    <div class="totalViews"><i class="fa fa-eye"></i> 3.6k Views</div>
+                                    <div class="popularityScore"><i class="fa fa-bullseye"></i> 88% Score</div>
+                                </div>
+                                <div class="descHook">
+                                    <p>Learn modern JavaScript from scratch, and practice in an intuitive environment. The challenges are inspired by real-world projects to make sure that you're learning the best practices, one step at a time. Try the first 42 lessons, challenges, projects & flashcards for free. Upgrade to Pro Services ...</p>
                                 </div>
                             </div>
-                            <div class="intrestBox">
-                                <h1>Shopping</h1>
-                                <div class="colorOverlay"></div>
-                                <div class="followOrRemove">
-                                    <i class="fa fa-trash"></i>
+                        </div>
+                        <div class="userAndComments">
+                            <div class="card p-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="image"> <img
+                                            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                                            class="rounded" > </div>
+                                    <div class="ml-3 w-100">
+                                        <h5 class="mb-0 mt-0">Alex Morrision</h5> <span>Senior Journalist</span>
+                                        <div
+                                            class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+                                            <div class="d-flex flex-column"> <span class="articles">Hooks</span>
+                                                <span class="number1">38</span> </div>
+                                            <div class="d-flex flex-column"> <span
+                                                    class="followers">Followers</span> <span
+                                                    class="number2">980</span> </div>
+                                            <div class="d-flex flex-column"> <span
+                                                    class="followers">Following</span> <span
+                                                    class="number2">320</span> </div>
+                                        </div>
+                                        <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                                                class="btn btn-sm btn-outline-primary w-100">View</button> <button
+                                                class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="intrestBox">
-                                <h1>Shopping</h1>
-                                <div class="colorOverlay"></div>
-                                <div class="followOrRemove">
-                                    <i class="fa fa-trash"></i>
+
+                            <div class="commentsSection">
+                                <div class="commentStatsAndRefresh" style="padding: 10px; background: gray; color: white; padding-bottom: 0px; display: flex; justify-content: space-between; align-items: center;">
+                                    <h6>3.2k Comments</h6>
+                                    <i class="fa fa-refresh" title="refresh" style="margin-bottom: 8px;"></i>
                                 </div>
-                            </div>
-                            <div class="intrestBox">
-                                <h1>Shopping</h1>
-                                <div class="colorOverlay"></div>
-                                <div class="followOrRemove">
-                                    <i class="fa fa-plus"></i>
+                                <div class="allComments">
+                                   <div class="singleComment" style="display: flex; align-items: flex-start;">
+                                       <img src="img/batman.jpg" style="width: 25px; height: 25px; object-position: top; border-radius: 50%; margin-right: 8px; object-fit:cover;" alt="" class="commenterImg">
+                                       <div class="nameAndComment">
+                                            <h6 style="font-size: 13px; margin-bottom: 0px;">Himalaya Gupta</h6>
+                                            <p style="font-size: 14px; font-weight: 600; color: rgb(116, 114, 114);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, eum!</p>
+                                       </div>
+                                   </div>
+                                   <div class="singleComment" style="display: flex; align-items: flex-start;">
+                                    <img src="img/Amy_Baker25.jpg" style="width: 25px; height: 25px; object-position: top; border-radius: 50%; margin-right: 8px; object-fit:cover;" alt="" class="commenterImg">
+                                    <div class="nameAndComment">
+                                         <h6 style="font-size: 13px; margin-bottom: 0px;">Amy Baker</h6>
+                                         <p style="font-size: 14px; font-weight: 600; color: rgb(116, 114, 114);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, eum!</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="intrestBox">
-                                <h1>Shopping</h1>
-                                <div class="colorOverlay"></div>
-                                <div class="followOrRemove">
-                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <div class="addComment">
+                                    <input type="text" placeholder="Post A Comment" spellcheck="false">
+                                    <button class="btn btn-secondary btn-sm">Post</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -6,158 +6,371 @@
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/followers.css">
 
 </head>
-<body>
-	<section class="section-50">
-		<div class="container">
-			<h3 class="m-b-50 heading-line">Notifications <i class="fa fa-bell text-white"></i></h3>
+<body><button  data-toggle="modal" data-target="#exampleModalCenter">Open</button>
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document" style="overflow-y: auto; height: 500px;">
+            <div class="modal-content" style=" border: none;  box-shadow: 0px 0px 5px #000 ;">
+                <div class="modal-body" style="padding:0px;height: auto;">
+									<div class="tabbed">
 
-			<div class="notification-ui_dd-content">
-				<div class="notification-list notification-list--unread">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-heart fa-2x text-danger"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your hook got new likes</p>
+										<input type="radio" name="tabs" id="tab-one" checked>
+										<label for="tab-one">Followers</label>
 
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random1.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list notification-list--unread">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-heart fa-2x text-danger"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your hook got new likes</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random2.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-comment fa-2x text-info"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your post started conversation</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random3.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<img src="images/users/user1.jpg" alt="">
-						</div>
-						<div class="notification-list_detail">
-							<p><b>John </b> is now following you</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-comment fa-2x text-info"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your post started conversation</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random4.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<img src="images/users/user3.jpg" alt="">
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Smriti </b> is now following you</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-heart fa-2x text-danger"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your hook got new likes</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random1.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<img src="images/users/user2.jpg" alt="">
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Rajesh </b> is now following you</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-comment fa-2x text-info"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your post started conversation</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random3.jpg" alt="Feature image">
-					</div>
-				</div>
-				<div class="notification-list">
-					<div class="notification-list_content">
-						<div class="notification-list_img">
-							<i class="fa fa-heart fa-2x text-danger"></i>
-						</div>
-						<div class="notification-list_detail">
-							<p><b>Hurray!</b> Your hook got new likes</p>
-							<p class="text-muted"><small>10 mins ago</small></p>
-						</div>
-					</div>
-					<div class="notification-list_feature-img">
-						<img src="images/features/random2.jpg" alt="Feature image">
-					</div>
-				</div>
-			</div>
+										<input type="radio" name="tabs" id="tab-two" checked>
+										<label for="tab-two">Following</label>
 
-			<div class="text-center">
-				<a href="#!" class="dark-link text-primary">Load more</a>
-			</div>
 
-		</div>
-	</section>
+										<div class="tabs">
+
+											<div>
+												<section class="section-50">
+													<div class="container">
+														<div class="notification-ui_dd-content">
+															<div class="notification-list notification-list--unread">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user1.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<a href="#">
+																				<p><b>Brijesh</b></p>
+																			</a>
+																		</a>
+																		<p class="text-muted"><small>developer</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+															<div class="notification-list notification-list--unread">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user2.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<a href="#">
+																				<p><b>Rajesh</b></p>
+																			</a>
+																		</a>
+																		<p class="text-muted"><small>CEO</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-primary btn-sm">Follow</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<a href="#">
+																				<p><b>Vandana</b></p>
+																			</a>
+																		</a>
+																		<p class="text-muted"><small>owner</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+														</div>
+
+														<div class="text-center">
+															<a href="#!" class="dark-link text-primary">Load more</a>
+														</div>
+
+													</div>
+												</section>
+											</div>
+
+											<div>
+												<section class="section-50">
+													<div class="container">
+														<div class="notification-ui_dd-content">
+															<div class="notification-list notification-list--unread">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user1.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Brijesh</b></p>
+																		</a>
+																		<p class="text-muted"><small>developer</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+															<div class="notification-list notification-list--unread">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user2.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>CEO</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user3.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Smriti</b></p>
+																		</a>
+																		<p class="text-muted"><small>Manager</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+															<div class="notification-list">
+																<div class="notification-list_content">
+																	<div class="notification-list_img">
+																		<a href="#">
+																			<img src="images/users/user4.jpg" alt="">
+																		</a>
+																	</div>
+																	<div class="notification-list_detail">
+																		<a href="#">
+																			<p><b>Vandana</b></p>
+																		</a>
+																		<p class="text-muted"><small>owner</small></p>
+																	</div>
+																</div>
+																<div class="notification-list_feature-img">
+																	<button type="button" class="btn btn-secondary btn-sm">Following</button>
+																</div>
+															</div>
+
+														</div>
+
+														<div class="text-center">
+															<a href="#!" class="dark-link text-primary">Load more</a>
+														</div>
+
+													</div>
+												</section>
+											</div>
+										</div>
+									</div>
+  </div>
+            </div>
+        </div>
+    </div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

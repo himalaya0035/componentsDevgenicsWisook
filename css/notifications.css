@@ -9,6 +9,7 @@
   padding: 50px 0;
 }
 
+
 .m-b-50 {
   margin-bottom: 50px;
 }
@@ -90,4 +91,12 @@
 }
 .notification-list .fa{
   padding-right: 20px;
+}
+
+.modal-body .nav-link{
+  color: black;
+}
+.modal-body .nav-link.active {
+  color: white;
+  background-color: black;
 }

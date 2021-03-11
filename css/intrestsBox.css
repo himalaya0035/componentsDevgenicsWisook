@@ -57,24 +57,37 @@
   }
   .mainPageIntrestBoxs .intrestBox:hover{
     transform: scale(1);
+    border: none;
+  }
+  .mainPageIntrestBoxs .colorOverlay{
+    opacity: 0.45;
+  }
+  .mainPageIntrestBoxs .intrestBox:hover .colorOverlay {
+    opacity: 0.6;
   }
   .mainPageIntrestBoxs .intrestBox h1{
     font-size: 22px;
   }
-  .mainPageIntrestBoxs .colorOverlay{
-    opacity: 0.45;
-    mix-blend-mode:luminosity;
+  .followOrRemove{
+    position: absolute;
+    bottom: 5px;
+    right: 3px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  .followOrRemove i {
+    font-size: 20px;
+    color: black;
   }
 @media screen and (max-width:500px){
     .intrestBox{
       width: 115px;
     }
-    .intrestBox:hover{
-      transform: scale(1);
-      border:0px;
-    }
-    .intrestBox:focus{
-      transform: scale(0.9);
-      border:1px solid white;
-    }
 }
+
