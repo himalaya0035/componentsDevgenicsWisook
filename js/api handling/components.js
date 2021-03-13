@@ -187,7 +187,7 @@ export function hookCard(){  //data here
             <div class="hookImgHolder">
                 <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                     draggable="false">
-                <h5 class="hookTitle">Learn Js The modern Way</h5>
+                <h5 class="hookTitle">Learn Js The modern Way Learn Js The modern Way</h5>
                 <a href="#"><i class="fa fa-expand openHook"></i></a>
                 <div class="hookOverlay"></div>
             </div>
