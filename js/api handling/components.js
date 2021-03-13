@@ -36,7 +36,7 @@ export function constructSidebar(){
                         </a>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#">
+                        <a href="collections.html">
                             <i class="fa fa-plus"></i>
                             <span class="menu-text">Create Collection</span>
                         </a>
@@ -123,7 +123,7 @@ export function constructSidebar(){
                 </div>
             </div>
             <div>
-                <a href="#">
+                <a href="#" data-toggle="modal" data-target="#modalLRForm">
                     <i class="fa fa-power-off"></i>
                 </a>
             </div>
@@ -335,8 +335,6 @@ export function fillSearchResult(){
     )
 }
 
-
-
 export function addHookModal(){
     return (
         `
@@ -425,6 +423,235 @@ export function managePagination(){
                             </a>
                         </ul>
                     </div>
+        `
+    )
+}
+
+export function editProfileModal(){
+    return (
+        `
+        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <form accept-charset="UTF-8" action="#" method="POST" target="_blank">
+                        <div class="form-group">
+                            <label for="exampleInputName">Full Name</label>
+                            <input type="text" name="fullname" class="form-control" id="exampleInputName"
+                                placeholder="Enter your name and surname" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" required="required">Credential</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter Credential (Ex - Teacher)">
+                        </div>
+                        <hr>
+                        <div class="form-group mt-3">
+                            <label class="mr-2">Update your Profile Image:</label>
+                            <input type="file" name="file">
+                        </div>
+                        <hr>
+                        <hr>
+                        <div class="form-group mt-3">
+                            <label class="mr-2">Update Your Cover Image:</label>
+                            <input type="file" name="file">
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-secondary btn-sm">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        `
+    )
+}
+
+export function followersAndFollowingModal(){
+    return(
+        `
+        <div class="modal fade" id="followersFollowing" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title w-100 font-weight-bold">User Followers And Following</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="overflow-y:auto; height: 500px; padding: 0px;">
+                    <div class="nav nav-tabs"  id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active"  id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-home" aria-selected="true">Following</a>
+                        <a class="nav-item nav-link" id="nav-followers-tab"  data-toggle="tab" href="#nav-followers" role="tab" aria-controls="nav-profile" aria-selected="false">Followers</a>
+                      </div>
+                    <div class="tab-content" id="nav-tabContentTwo">
+                        <div class="tab-pane fade show active" id="nav-following"  role="tabpanel" aria-labelledby="nav-following-tab">
+                            <div class="notification-ui_dd-content" >
+                                <div class="notification-list notification-list--unread" style="margin-bottom: 0px; border-bottom: 1px solid black;">
+                                    <div class="notification-list_content">
+                                        <div class="notification-list_img">
+                                            <a href="profile.html">
+                                                <img src="img/Amy_Baker25.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="notification-list_detail">
+                                            <a href="profile.html">
+                                                <a href="profile.html">
+                                                    <p><b>Brijesh</b></p>
+                                                </a>
+                                            </a>
+                                            <p class="text-muted"><small>developer</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="notification-list_feature-img">
+                                        <button type="button" class="btn btn-secondary btn-sm">Follow</button>
+                                    </div>
+                                </div>
+                                <div class="notification-list notification-list--unread">
+                                    <div class="notification-list_content">
+                                        <div class="notification-list_img">
+                                            <a href="profile.html">
+                                                <img src="img/batman.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="notification-list_detail">
+                                            <a href="profile.html">
+                                                <a href="profile.html">
+                                                    <p><b>Rajesh</b></p>
+                                                </a>
+                                            </a>
+                                            <p class="text-muted"><small>CEO</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="notification-list_feature-img">
+                                        <button type="button" class="btn btn-secondary btn-sm">Following</button>
+                                    </div>
+                                </div>
+                        
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        `
+    )
+}
+
+export function signupAndSigninModal(){
+    return(
+        `
+        <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+              Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+              Register</a>
+          </li>
+        </ul>
+
+        <!-- Tab panels -->
+        <div class="tab-content">
+          <!--Panel 7-->
+          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body mb-1">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+              </div>
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+              </div>
+              <div class="text-center mt-2">
+                <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+              </div>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <div class="options text-center text-md-right mt-1">
+                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+              </div>
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+          <!--/.Panel 7-->
+
+          <!--Panel 8-->
+          <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+              </div>
+
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+              </div>
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+              </div>
+
+              <div class="text-center form-sm mt-2">
+                <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+              </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <div class="options text-right">
+                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+              </div>
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          <!--/.Panel 8-->
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
         `
     )
 }

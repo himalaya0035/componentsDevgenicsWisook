@@ -1,5 +1,5 @@
 import { getJsonData, constructSection, postJsonData } from '../getAndPostRequest.js';
-import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination} from '../components.js'
+import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination, signupAndSigninModal} from '../components.js'
 import * as utility from '../utilities/utilities.js'
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
@@ -68,7 +68,8 @@ function constructHomepage(){
     const navbarHtml = contstructNavbar();
     const pagination = managePagination();
     const hookModal = addHookModal();
-    
+    const signupAndSigninModalHtml = signupAndSigninModal();
+
     const assemblePage = `
     <div class="page-wrapper default-theme sidebar-bg bg1">
         ${sidebarHtml}
@@ -86,6 +87,7 @@ function constructHomepage(){
                     ${pagination}
                 </div>
                 ${hookModal}
+                ${signupAndSigninModalHtml}
         </main>
     </div>
     `
