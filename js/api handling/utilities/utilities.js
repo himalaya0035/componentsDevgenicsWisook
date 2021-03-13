@@ -22,6 +22,24 @@ export function loadMainJsFile() {
   }
 }
 
+export function enableLoader(containerElement,loaderGif) {
+  containerElement.style.visibility = 0;
+  containerElement.style.opacity = 0;
+  loaderGif.style.display = 'block';
+  loaderGif.style.visibility = 1;
+  loaderGif.style.opacity = 1;
+}
+
+export function disableLoader(containerElement,loaderGif) {
+  containerElement.style.visibility = 1;
+  containerElement.style.opacity = 1;
+  loaderGif.style.display = 'none';
+  loaderGif.style.visibility = 0;
+  loaderGif.style.opacity = 0;
+}
+
+
+
 export function addSlider(element) {
   const slider = document.querySelector(element);
   let isDown = false;
@@ -149,3 +167,23 @@ export function manageOnClickIntrestBox(){
     }
   }
 }
+
+export function manageHooksClickEvents(classOfElement,toggleClass, existingClass){
+  let bookmarkBtns = document.getElementsByClassName(classOfElement);
+  for (let i=0;i<bookmarkBtns.length;i++){
+    bookmarkBtns[i].onclick = (e) => {
+      let clikcedBtn = e.target;
+      console.log(clikcedBtn)
+      if (clikcedBtn.classList.contains('fa')){
+        clikcedBtn.classList.toggle(toggleClass);
+        clikcedBtn.classList.toggle(existingClass)
+      }
+      else {
+        let faElement = clikcedBtn.getElementsByTagName('i')[0];
+        faElement.classList.toggle(toggleClass);
+        faElement.classList.toggle(existingClass)
+      }
+    }
+  }
+}
+

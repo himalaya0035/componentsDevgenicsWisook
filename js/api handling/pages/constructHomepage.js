@@ -7,7 +7,8 @@ const loader = document.getElementById('loader');
 
 
 
-function constructTrendingThisWeek(){ //data here
+function constructTrendingThisWeek(data){ //data here
+    console.log(data)
     let trendingHooksList = '';
     for (let i=0;i<12;i++){
         trendingHooksList += hookCard();
@@ -24,7 +25,7 @@ function constructTrendingThisWeek(){ //data here
     )
 }
 
-function constructTopUsers(){ // data here
+function constructTopUsers(data){ // data here
     let topUsersList = '';
     for (let i=0;i<6;i++){
         topUsersList += userCard();
@@ -43,7 +44,7 @@ function constructTopUsers(){ // data here
     )
 }
 
-function constructLatestFeed(){ //data here
+function constructLatestFeed(data){ //data here
     let latestFeedHooks = '';
     for (let i=0;i<12;i++){
         latestFeedHooks += hookCard();
@@ -60,47 +61,56 @@ function constructLatestFeed(){ //data here
     )
 }
 
-function constructHomepage(){
-    const trendingHooksHtml = constructTrendingThisWeek();
-    const topUsersHtml = constructTopUsers();
-    const latestFeedHtml = constructLatestFeed(); 
+async function constructHomepage(urlOne,UrlTwo,urlThree){
+    utility.enableLoader(rootElement,loader);
+
+    const trendingHooksHtml =  constructSection(urlOne,constructTrendingThisWeek);
+    const topUsersHtml =  constructSection(UrlTwo,constructTopUsers);
+    const latestFeedHtml =  constructSection(urlThree,constructLatestFeed);
     const sidebarHtml = constructSidebar();
     const navbarHtml = contstructNavbar();
     const pagination = managePagination();
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = signupAndSigninModal();
+    let assemblePage = '';
 
-    const assemblePage = `
-    <div class="page-wrapper default-theme sidebar-bg bg1">
-        ${sidebarHtml}
-        <main class="page-content">
-            <div id="overlay" class="overlay"></div>
-            <div class="container-fluid" style="padding:0px;">
-                ${navbarHtml}
-                <div id="addHookMobile" data-toggle="modal" data-target="#exampleModalCenter">
-                    <i class="fa fa-plus" style="font-size:20px; color: white;"></i>
-                </div>
-                <div class="pageWrapper" style="padding-bottom: 0px;">
-                    ${trendingHooksHtml}
-                    ${topUsersHtml}
-                    ${latestFeedHtml}
-                    ${pagination}
-                </div>
-                ${hookModal}
-                ${signupAndSigninModalHtml}
-        </main>
-    </div>
-    `
-    rootElement.innerHTML = assemblePage;    
+    await Promise.all([trendingHooksHtml,topUsersHtml,latestFeedHtml]).then(values =>{
+        assemblePage = `
+        <div class="page-wrapper default-theme sidebar-bg bg1">
+            ${sidebarHtml}
+            <main class="page-content">
+                <div id="overlay" class="overlay"></div>
+                <div class="container-fluid" style="padding:0px;">
+                    ${navbarHtml}
+                    <div id="addHookMobile" data-toggle="modal" data-target="#exampleModalCenter">
+                        <i class="fa fa-plus" style="font-size:20px; color: white;"></i>
+                    </div>
+                    <div class="pageWrapper" style="padding-bottom: 0px;">
+                        ${values[0]}
+                        ${values[1]}
+                        ${values[2]}
+                        ${pagination}
+                    </div>
+                    ${hookModal}
+                    ${signupAndSigninModalHtml}
+            </main>
+        </div>
+        `
+    })    
+    rootElement.innerHTML = assemblePage;   
+    utility.disableLoader(rootElement,loader) 
+
     utility.manageSidebarStateOnDifferentMediaDevices();
     utility.loadMainJsFile();
     utility.addSlider('.hookScroller');
     utility.addSlider('.usersScroller');
     utility.addNecessaryEventListeners();
     utility.loadLatestFeedJs();
-    utility.manageOnClickIntrestBox();      
+    utility.manageOnClickIntrestBox();   
+    utility.manageHooksClickEvents('bookmark','fa-bookmark','fa-bookmark-o');
+    utility.manageHooksClickEvents('like','fa-heart','fa-heart-o');
 }
 
-constructHomepage();
-//   .then(() => console.log("prmoise resolved"))
-//   .catch((err) => console.log(err.message));
+constructHomepage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')
+  .then(() => console.log("prmoise resolved"))
+  .catch((err) => console.log(err.message));

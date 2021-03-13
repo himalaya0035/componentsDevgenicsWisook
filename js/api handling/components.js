@@ -188,7 +188,7 @@ export function hookCard(){  //data here
                 <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                     draggable="false">
                 <h5 class="hookTitle">Learn Js The modern Way</h5>
-                <i class="fa fa-expand openHook"></i>
+                <a href="#"><i class="fa fa-expand openHook"></i></a>
                 <div class="hookOverlay"></div>
             </div>
             <div class="hookStats">
@@ -202,7 +202,7 @@ export function hookCard(){  //data here
                     <i class="fa fa-share-alt"></i>
                 </div>
                 <div class="statSection redirect" title="Visit Url">
-                    <i class="fa fa-external-link"></i>
+                   <a href="#" target="_blank"><i class="fa fa-external-link"></i></a>
                 </div>
             </div>
          </div>
@@ -396,7 +396,21 @@ export function addHookModal(){
     )
 }
 
-export function managePagination(){
+export function managePagination(totalCount, nextPageUrl){
+    let totalc = 48;
+    let noOfPages = 48/12;
+    let paginationsList = '';
+    // no of pages 
+    for (let i=0;i<noOfPages;i++){
+        paginationsList += `
+        <a href="">
+        <li>
+            <</li> </a> <a class="is-active" href="#">
+        <li>i</li>
+    </a>
+        `
+    }
+    
     return(
         `
         <div class="pagination p1">
