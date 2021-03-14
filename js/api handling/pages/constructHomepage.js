@@ -69,9 +69,10 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     const latestFeedHtml =  constructSection(urlThree,constructLatestFeed);
     const sidebarHtml = constructSidebar();
     const navbarHtml = contstructNavbar();
-    const pagination = managePagination();
+    const pagination = managePagination(53);
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = signupAndSigninModal();
+
     let assemblePage = '';
 
     await Promise.all([trendingHooksHtml,topUsersHtml,latestFeedHtml]).then(values =>{
@@ -109,6 +110,7 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     utility.manageOnClickIntrestBox();   
     utility.manageHooksClickEvents('bookmark','fa-bookmark','fa-bookmark-o');
     utility.manageHooksClickEvents('like','fa-heart','fa-heart-o');
+    utility.manageSearchResults();
 }
 
 constructHomepage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')

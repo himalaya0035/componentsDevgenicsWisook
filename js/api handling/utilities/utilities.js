@@ -1,3 +1,5 @@
+import { constructSection, postJsonData } from '../getAndPostRequest.js';
+
 export function loadMainJsFile() {
   jQuery(function ($) {
     toggleSidebarByOverlay();
@@ -186,4 +188,89 @@ export function manageHooksClickEvents(classOfElement,toggleClass, existingClass
     }
   }
 }
+
+
+// test code after this comment 
+
+var arrayForResults = [];
+var count = 0;
+function filterData(data,searchText){
+    if (data){
+        arrayForResults = data.results;
+        count = 1;
+    }
+    let matches = arrayForResults.filter(arrElement => {
+        const regex = new RegExp(`^${searchText}`,'gi');
+        return arrElement.name.match(regex)
+    })
+    outputHtml(matches,searchText,count)
+}
+
+function outputHtml(matches,searchText,count){
+    var searchResults = document.getElementsByClassName('searchResults')[0];;
+   let html = matches.map(match => `<a href="${match.imgUrl}" class="searchResult">
+   ${match.name}
+</a>`
+   ).join('');
+   if (matches.length === 0 && count === 1){
+       searchResults.innerHTML = `<p style="display:flex; justify-content:center; margin-top:40px; color:#808080; text-align:center;">No search Result Found <br> with keyword "${searchText}"</p>`
+   }
+   else {
+    searchResults.innerHTML = html;
+   }
+}
+
+function enableSearchLoader(loader){
+    loader.style.display = 'block';
+    loader.style.visibility = 1;
+    loader.style.opacity = 1;
+}
+
+function disableSearchLoader(loader){
+    loader.style.display = 'none';
+    loader.style.visibility = 0;
+    loader.style.opacity = 0;
+}
+
+export function manageSearchResults(){
+    var searchBox = document.getElementsByClassName('searchInput');
+    var searchResults = document.getElementsByClassName('searchResults')[0];
+    var loader2 = document.getElementById('loader2');
+    var searchIcon = document.getElementsByClassName('searchIcon')[0];
+    searchIcon.onclick = () => {
+        if (searchIcon.classList.contains('fa-close'))
+        searchBox[0].value = '';
+        searchResults.style.display = 'none';
+        searchIcon.classList.remove('fa-close');
+    }
+    
+    for (let i=0;i<searchBox.length;i++){
+      searchBox[i].addEventListener('input', async (e) => {
+        let inputSearchBox = e.target;
+        if (inputSearchBox.value.length > 0){
+            searchResults.style.display = 'block';
+            searchIcon.classList.add('fa-close');
+            if (inputSearchBox.value.length == 1){
+                arrayForResults = [];
+                count = 0;
+                enableSearchLoader(loader2) 
+                let aisehi = await constructSection('./js/api handling/sample.json',filterData,inputSearchBox.value);
+                disableSearchLoader(loader2)
+            }
+            else {
+                filterData(undefined,inputSearchBox.value)
+            }
+        }
+        else {
+            searchResults.style.display = 'none';
+            disableSearchLoader(loader2);
+            searchIcon.classList.remove('fa-close');
+            searchResults.innerHTML = '';
+        }
+    })
+
+    }
+}
+
+
 

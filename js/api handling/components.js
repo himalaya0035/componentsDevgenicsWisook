@@ -268,7 +268,7 @@ export function contstructNavbar(){
                 </select>
             </button>
             <input type="text" class="searchInput" spellcheck="false" placeholder="Search Hooks ...">
-            <img src="img/search.svg" class="searchIcon" title="Search.." alt="">
+            <i class="fa fa-search searchIcon"></i>
         </div>
         <button type="button" id="addHook" class="btn btn-outline " data-toggle="modal"
             data-target="#exampleModalCenter" title="Post a hook"><i class="fa fa-plus"></i> Hook
@@ -304,26 +304,11 @@ export function contstructNavbar(){
             <i class="fa fa-arrow-left searchIcon2"></i>
         </div>
         <div class="searchResults">
-            <a href="#" class="searchResult">
-                Modern Way to learn JS
-            </a>
-            <a href="#" class="searchResult">
-                Best Resources To learn WebD
-            </a>
-            <a href="#" class="searchResult">
-                Top 20 movies of 2020
-            </a>
-            <a href="#" class="searchResult">
-                Modern Way to learn JS
-            </a>
-            <a href="#" class="searchResult">
-                Best Resources To learn WebD
-            </a>
-            <a href="#" class="searchResult">
-                Top 20 movies of 2020
-            </a>
-            </div>
         </div>
+        <div id="loader2" style="position:absolute; top:50%; left: 50%; transform: translate(-50%,-50%);">
+        <img src="img/loader.gif" alt="" width="150">
+    </div>
+    </div>
         `
     )
 }
@@ -395,49 +380,43 @@ export function addHookModal(){
         `
     )
 }
-
-export function managePagination(totalCount, nextPageUrl){
-    let totalc = 48;
-    let noOfPages = 48/12;
-    let paginationsList = '';
-    // no of pages 
-    for (let i=0;i<noOfPages;i++){
+                
+export function managePagination(totalCount){
+   let noOfPages;
+   let paginationsList = ` <a href="#">
+                            <li>
+                                <</li> </a> 
+                                <a class="is-active" href="url/page=1">
+                                <li>1</li>
+                                </a>`
+   if (totalCount % 12 == 0){
+       noOfPages = totalCount / 12;
+       console.log(noOfPages)
+   } 
+   else {
+       noOfPages = (totalCount / 12) + 1
+   }
+   noOfPages = parseInt(noOfPages)
+    for (let i=0;i<noOfPages-1;i++){
+        console.log(i+2)
         paginationsList += `
-        <a href="">
-        <li>
-            <</li> </a> <a class="is-active" href="#">
-        <li>i</li>
+        <a href="url/page=${i+2}">
+        <li>${i+2}</li>
     </a>
         `
     }
+    paginationsList += ` <a href="#!">
+    <li>></li>
+</a>`
     
     return(
         `
-        <div class="pagination p1">
-                        <ul>
-                            <a href="#">
-                                <li>
-                                    <</li> </a> <a class="is-active" href="#">
-                                <li>1</li>
-                            </a>
-                            <a href="#">
-                                <li>2</li>
-                            </a>
-                            <a href="#">
-                                <li>3</li>
-                            </a>
-                            <a href="#">
-                                <li>4</li>
-                            </a>
-                            <a href="#">
-                                <li>5</li>
-                            </a>
-                            <a href="#">
-                                <li>></li>
-                            </a>
-                        </ul>
+                    <div class="pagination p1">
+                    <ul>
+                       ${paginationsList}
+                    </ul>
                     </div>
-        `
+                `
     )
 }
 
