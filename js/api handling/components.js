@@ -303,7 +303,7 @@ export function contstructNavbar(){
             <input type="text" class="searchInput" spellcheck="false" placeholder="Search Hooks...">
             <i class="fa fa-arrow-left searchIcon2"></i>
         </div>
-        <div class="searchResults">
+        <div class="searchResults" id="style-1">
         </div>
         <div id="loader2" style="position:absolute; top:50%; left: 50%; transform: translate(-50%,-50%);">
         <img src="img/loader.gif" alt="" width="150">
@@ -330,10 +330,10 @@ export function addHookModal(){
                 <div class="modal-body" style="padding:0px;height: auto;">
                     <div class="previewHook"
                         style="background: #696660; padding: 40px;   display: flex; justify-content: center; align-items: center;">
-                        <div class="hookPost" style="margin:0px; box-shadow: 0px 5px 10px #000;">
+                        <div class="hookPost" style="margin:0px; box-shadow: 0px 5px 10px #000; position:relative;">
                             <div class="hookImgHolder">
-                                <img alt="" src="img/deafaultPicture.jpg" draggable="false">
-                                <h5 class="hookTitle">Preview Hook Title ...</h5>
+                                <img alt="" src="img/deafaultPicture.jpg" id="previewHookImg" draggable="false">
+                                <h5 class="hookTitle" id="previewHookTitle">Preview Hook Title ...</h5>
                                 <i class="fa fa-expand openHook"></i>
                                 <div class="hookOverlay"></div>
                             </div>
@@ -355,7 +355,11 @@ export function addHookModal(){
                                     <i class="fa fa-external-link"></i>
                                 </div>
                             </div>
+                            <div id="loader3" style="z-index:50; position:absolute;  justify-content:center; align-items:center; top:0; left:0; width:100%; height:100%; background:#f2f2f2;">
+                                <img src="img/loader2.gif" alt="" width="150">
+                            </div>
                         </div>
+                        
                         <p
                             style="position: absolute; font-weight: bold; top: 5px; color: #f2f2f2; left: 12px; font-size: 18px; letter-spacing: 2px;">
                             Preview</p>
@@ -363,14 +367,17 @@ export function addHookModal(){
                             data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </a>
+                        
                     </div>
                     <div class="addHookUrl" style="height: auto;  padding: 10px;">
+                    <p id="message" style="color:red; margin-bottom:0px;"></p>
                         <p style="margin: 0px; font-weight: bold;">Paste A URL <i class="fa fa-link"></i> :
                         </p>
+                       
                         <input type="text" id="addHookUrl" spellcheck="false"
                             style="color:grey; width: 100%; font-weight: bold; box-shadow: 0px 0px 3px #000; border: none; padding: 5px 12px; margin-bottom: 10px; margin-top: 10px; border-radius: 5px;"
                             placeholder="Url here..">
-                        <button type="button" class="btn btn-dark"
+                        <button type="button" id="addHookBtnFinal" class="btn btn-dark"
                             style="float: right; margin-bottom: 10px;">Hook It</button>
                     </div>
                 </div>
@@ -648,3 +655,64 @@ export function signupAndSigninModal(){
         `
     )
 }
+
+export function fillSingleNotificationElement(notificationType){ // also data here
+    switch(notificationType) {
+      case 'like' :
+        return (
+          `
+          <a href="" class="notification-list notification-list--unread">
+          <div class="notification-list_content">
+            <div class="notification-list_img">
+              <i class="fa fa-heart fa-2x text-danger"></i>
+            </div>
+            <div class="notification-list_detail">
+              <p><b>Hurray!</b> Your hook got new likes</p>
+  
+              <p class="text-muted"><small>10 mins ago</small></p>
+            </div>
+          </div>
+          <div class="notification-list_feature-img">
+            <img src="img/Amy_Baker25.jpg" alt="Feature image">
+          </div>
+        </a>
+          `
+        )
+      case 'comment' :
+        return (
+          `
+          <a href="" class="notification-list notification-list--unread">
+          <div class="notification-list_content">
+            <div class="notification-list_img">
+              <i class="fa fa-comment fa-2x text-primary"></i>
+            </div>
+            <div class="notification-list_detail">
+              <p><b>Hurray!</b> Your hook started a coversation !</p>
+  
+              <p class="text-muted"><small>10 mins ago</small></p>
+            </div>
+          </div>
+          <div class="notification-list_feature-img">
+            <img src="img/Amy_Baker25.jpg" alt="Feature image">
+          </div>
+        </a>
+          `
+        )
+      case 'follow' :
+        return (
+          `
+          <a href="" class="notification-list notification-list--unread">
+          <div class="notification-list_content">
+            <div class="notification-list_img">
+              <img src="img/batman.jpg" alt="">
+            </div>
+            <div class="notification-list_detail">
+              <p><b>John </b> is now following you</p>
+              <p class="text-muted"><small>10 mins ago</small></p>
+            </div>
+          </div>
+        </a>
+          `
+        )
+    }  
+  }

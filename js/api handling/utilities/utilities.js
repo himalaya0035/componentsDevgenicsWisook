@@ -225,6 +225,11 @@ function enableSearchLoader(loader){
     loader.style.visibility = 1;
     loader.style.opacity = 1;
 }
+function enableHookLoader(loader){
+    loader.style.display = 'flex';
+    loader.style.visibility = 1;
+    loader.style.opacity = 1;
+}
 
 function disableSearchLoader(loader){
     loader.style.display = 'none';
@@ -272,5 +277,52 @@ export function manageSearchResults(){
     }
 }
 
+export function disableBtn(ele) {
+  ele.disabled = true;
+  ele.style.background = '#cccccc';
+  ele.style.color = '#666666';
+}
 
+export function enableBtn(ele) { 
+  ele.disabled = false;
+  ele.style.background = '#673AB7';
+  ele.style.color = 'white';
+}
+
+export function displayErrorMsg(msg) {
+  document.getElementById('message').innerText = msg;
+}
+
+export function removeErrorMsg() {
+  document.getElementById('message').innerText = '';
+}
+
+export function manageAddHookModalPreveiw(){
+  const addHookInputBox = document.getElementById('addHookUrl');
+  const addHookBtn = document.getElementById('addHookBtnFinal')
+  // addHookBtn.onclick = async () => {
+  //   postJsonData('')
+  // }
+  const loader = document.getElementById('loader3')
+  disableBtn(addHookBtn)
+  addHookInputBox.addEventListener('input',async ()=>{
+    enableHookLoader(loader)
+    try {
+      removeErrorMsg();
+      await constructSection('https://jsonplaceholder.typicode.com/todos/1',showPreviewHook)
+      enableBtn(addHookBtn)
+    }
+    catch{
+      displayErrorMsg('Invalid Url')
+    }
+    disableSearchLoader(loader)
+  })
+}
+
+function showPreviewHook(data){
+  const previewHookTitle = document.getElementById('previewHookTitle');
+  const previewHookImg = document.getElementById('previewHookImg');
+  previewHookTitle.innerText = data.title;
+  previewHookImg.src = 'img/batman.jpg';
+}
 

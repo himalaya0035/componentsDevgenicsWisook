@@ -1,5 +1,5 @@
 import { getJsonData, constructSection, postJsonData } from '../getAndPostRequest.js';
-import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination, signupAndSigninModal} from '../components.js'
+import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination, signupAndSigninModal, fillSingleNotificationElement} from '../components.js'
 import * as utility from '../utilities/utilities.js'
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
@@ -72,7 +72,8 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     const pagination = managePagination(53);
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = signupAndSigninModal();
-
+    // const notificationHtml = fillSingleNotificationElement('comment'); // for loop use krke sare data ke liye bhi use kr skte
+    // console.log(notificationHtml)
     let assemblePage = '';
 
     await Promise.all([trendingHooksHtml,topUsersHtml,latestFeedHtml]).then(values =>{
@@ -111,6 +112,7 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     utility.manageHooksClickEvents('bookmark','fa-bookmark','fa-bookmark-o');
     utility.manageHooksClickEvents('like','fa-heart','fa-heart-o');
     utility.manageSearchResults();
+    utility.manageAddHookModalPreveiw();
 }
 
 constructHomepage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')
