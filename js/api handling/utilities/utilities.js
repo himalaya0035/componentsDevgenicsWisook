@@ -306,6 +306,7 @@ export function manageAddHookModalPreveiw(){
   const loader = document.getElementById('loader3')
   disableBtn(addHookBtn)
   addHookInputBox.addEventListener('input',async ()=>{
+   
     enableHookLoader(loader)
     try {
       removeErrorMsg();
@@ -314,8 +315,12 @@ export function manageAddHookModalPreveiw(){
     }
     catch{
       displayErrorMsg('Invalid Url')
+      disableBtn(addHookBtn)
     }
     disableSearchLoader(loader)
+    if (addHookInputBox.value.length == 0){
+      disableBtn(addHookBtn)
+    }
   })
 }
 
@@ -326,3 +331,72 @@ function showPreviewHook(data){
   previewHookImg.src = 'img/batman.jpg';
 }
 
+
+
+
+
+export function loadLoginModalJs(){
+  const signUpBtn = document.getElementsByClassName('signUp')[0];
+  const signInBtn = document.getElementsByClassName('signIn');
+  const showLoginform = document.getElementById('showLoginForm');
+  const showRegisterform = document.getElementById('showRegisterForm');
+  console.log({showRegisterform})
+  for (let i=0;i<signInBtn.length;i++) signInBtn[i].onclick = () => openLoginModal();
+  signUpBtn.onclick = () => openRegisterModal();
+  showLoginform.onclick = () => showLoginForm();
+  showRegisterform.onclick = () => showRegisterForm();
+}
+
+function showRegisterForm(){
+  $('.loginBox').fadeOut('fast',function(){
+      $('.registerBox').fadeIn('fast');
+      $('.login-footer').fadeOut('fast',function(){
+          $('.register-footer').fadeIn('fast');
+      });
+      $('.modal-title').html('Register with');
+  }); 
+  $('.error').removeClass('alert alert-danger').html('');
+     
+}
+function showLoginForm(){
+  $('#loginModal .registerBox').fadeOut('fast',function(){
+      $('.loginBox').fadeIn('fast');
+      $('.register-footer').fadeOut('fast',function(){
+          $('.login-footer').fadeIn('fast');    
+      });
+      
+      $('.modal-title').html('Login with');
+  });       
+   $('.error').removeClass('alert alert-danger').html(''); 
+}
+
+function openLoginModal(){
+  showLoginForm();
+  console.log('working ++')
+  setTimeout(function(){
+      $('#loginModal').modal('show');    
+  }, 230);
+  
+}
+function openRegisterModal(){
+  showRegisterForm();
+  setTimeout(function(){
+      $('#loginModal').modal('show');    
+  }, 230);
+  
+}
+
+function loginAjax(){
+   shakeModal();
+}
+
+function shakeModal(){
+  $('#loginModal .modal-dialog').addClass('shake');
+           $('.error').addClass('alert alert-danger').html("Invalid email/password combination");
+           $('input[type="password"]').val('');
+           setTimeout( function(){ 
+              $('#loginModal .modal-dialog').removeClass('shake'); 
+  }, 1000 ); 
+}
+
+ 

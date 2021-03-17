@@ -1,14 +1,15 @@
-// sidebar componenents starts
 export function constructSidebar(){
+    let isAuthenticated = true;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
+    const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
     return (
         `
         <nav id="sidebar" class="sidebar-wrapper">
         <div class="sidebar-content" style="background-color:rgb(0, 0, 0);  color:white;">
             <!-- sidebar-brand  -->
             <div class="sidebar-item sidebar-brand">
-                <a href="#"
+                <a href="/"
                     style="color: white; letter-spacing: 3px; font-size: 23px; display: flex; align-items: flex-end;"><img
                         src="img/dry-cleaning-with-mineral-spirits.svg" alt="" width="35"
                         style="margin-right: 10px;"> Wisook</a>
@@ -30,19 +31,19 @@ export function constructSidebar(){
                         </a>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="bookmark.html">
+                        <a href=${isAuthenticated ? 'bookmark.html' : '#!'} class=${isAuthenticated ? '' : 'signIn'}>
                             <i class="fa fa-bookmark"></i>
                             <span class="menu-text">Bookmarks</span>
                         </a>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="collections.html">
+                        <a href="${isAuthenticated ? 'collections.html' : '#!'}" class=${isAuthenticated ? '' : 'signIn'}>
                             <i class="fa fa-plus"></i>
                             <span class="menu-text">Create Collection</span>
                         </a>
                     </li>
                     <li class="header-menu">
-                        <span>Your Intrests</span>
+                        <span>${isAuthenticated ? 'Your Interests' : 'Explore Intrests'}</span>
                     </li>
                     ${intrestSection}
                     <a href="intrests.html" class="viewAllIntrests">View All</a>
@@ -52,7 +53,7 @@ export function constructSidebar(){
         </div>
         <!-- sidebar-footer  -->
         <div class="sidebar-footer" style="background-color: black; ">
-            <div class="dropdown">
+            <div class="dropdown" title="Notifications">
 
                 <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell"></i>
@@ -110,23 +111,7 @@ export function constructSidebar(){
                     <a class="dropdown-item text-center" href="notifications.html">View all notifications</a>
                 </div>
             </div>
-
-            <div class="dropdown">
-                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-cog"></i>
-
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
-                    <a class="dropdown-item" href="#">My profile</a>
-                    <a class="dropdown-item" href="#">Help</a>
-                    <a class="dropdown-item" href="#">Setting</a>
-                </div>
-            </div>
-            <div>
-                <a href="#" data-toggle="modal" data-target="#modalLRForm">
-                    <i class="fa fa-power-off"></i>
-                </a>
-            </div>
+            ${sidebarFooterOptions}
             <div class="pinned-footer">
                 <a href="#">
                     <i class="fas fa-ellipsis-h"></i>
@@ -177,6 +162,49 @@ function constructSidebarIntrestSection(){ // data here
     )
 }
 
+function getSidebarOptions(isAuthenticated){
+    if (isAuthenticated)
+    return (
+        `
+        <div class="dropdown" title="explore settings">
+            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cog"></i>
+
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
+                <a class="dropdown-item" href="#">Accounts</a>
+                <a class="dropdown-item" href="#">Privacy Notice</a>
+                <a class="dropdown-item" href="#">Terms And Conditions</a>
+            </div>
+         </div>
+    
+     <div title="Log out" >
+        <a href="#!">
+            <i class="fa fa-power-off"></i>
+        </a>
+        
+    </div>
+        `
+    )
+    else 
+    return (
+        `
+       
+             <div class="signUp" data-toggle="modal" title="Sign Up">
+                <a href="#!" >
+                    <i class="fa fa-user"></i>
+                </a>
+                
+            </div>
+            <div class="signIn" data-toggle="modal" title="Sign In">
+            <a href="#!" >
+                <i class="fa fa-sign-in"></i>
+            </a>
+            
+        </div>
+        `
+    )
+}
 // sidebar components ends
 
 
@@ -313,12 +341,7 @@ export function contstructNavbar(){
     )
 }
 
-export function fillSearchResult(){
-    return (
-        `
-        `
-    )
-}
+
 
 export function addHookModal(){
     return (
@@ -356,7 +379,7 @@ export function addHookModal(){
                                 </div>
                             </div>
                             <div id="loader3" style="z-index:50; position:absolute;  justify-content:center; align-items:center; top:0; left:0; width:100%; height:100%; background:#f2f2f2;">
-                                <img src="img/loader2.gif" alt="" width="150">
+                                <img src="img/loader3.gif" alt="" width="150">
                             </div>
                         </div>
                         
@@ -715,4 +738,82 @@ export function fillSingleNotificationElement(notificationType){ // also data he
           `
         )
     }  
+  }
+
+  export function loginAndSignupModal(){
+      return (
+          `
+          <div class="modal fade login" id="loginModal">
+          <div class="modal-dialog modal-dialog-centered login animated">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h4 class="modal-title">Login with</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="box">
+                          <div class="content">
+                              <div class="social">
+                                  <a class="circle github" href="#">
+                                      <i class="fa fa-github fa-fw"></i>
+                                  </a>
+                                  <a id="google_login" class="circle google" href="#">
+                                      <i class="fa fa-google-plus fa-fw"></i>
+                                  </a>
+                                  <a id="facebook_login" class="circle facebook" href="#">
+                                      <i class="fa fa-facebook fa-fw"></i>
+                                  </a>
+                              </div>
+                              <div class="division">
+                                  <div class="line l"></div>
+                                  <span>or</span>
+                                  <div class="line r"></div>
+                              </div>
+                              <div class="error"></div>
+                              <div class="form loginBox">
+                                  <form method="" action="" accept-charset="UTF-8">
+                                      <input id="email" class="form-control" type="text" placeholder="Email"
+                                          name="email">
+                                      <input id="password" class="form-control" type="password" placeholder="Password"
+                                          name="password">
+                                      <input class="btn btn-default btn-login" type="button" value="Login"
+                                          onclick="loginAjax()">
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="box">
+                          <div class="content registerBox" style="display:none;">
+                              <div class="form">
+                                  <form method="" html="{:multipart=>true}" data-remote="true" action=""
+                                      accept-charset="UTF-8">
+                                      <input id="email" class="form-control" type="text" placeholder="Email"
+                                          name="email">
+                                      <input id="password" class="form-control" type="password" placeholder="Password"
+                                          name="password">
+                                      <input id="password_confirmation" class="form-control" type="password"
+                                          placeholder="Repeat Password" name="password_confirmation">
+                                      <input class="btn btn-default btn-register" type="button" value="Create account"
+                                          name="commit">
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <div class="forgot login-footer">
+                          <span>Looking to
+                              <a href="#!" id="showRegisterForm">create an account</a>
+                              ?</span>
+                      </div>
+                      <div class="forgot register-footer" style="display:none">
+                          <span>Already have an account?</span>
+                          <a href="#!" id="showLoginForm">Login</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+          `
+      )
   }
