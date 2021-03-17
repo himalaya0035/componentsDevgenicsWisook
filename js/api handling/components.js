@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = true;
+    let isAuthenticated = !true;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -123,7 +123,6 @@ export function constructSidebar(){
     )
 }
 
-console.log()
 
 function constrcutSidebarProfileSection(){
     // make api request here
@@ -453,9 +452,9 @@ export function managePagination(totalCount){
 export function editProfileModal(){
     return (
         `
-        <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="modalLoginForm"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered"  role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title w-100 font-weight-bold">Edit Profile</h4>

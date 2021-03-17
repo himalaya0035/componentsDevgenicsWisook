@@ -399,4 +399,11 @@ function shakeModal(){
   }, 1000 ); 
 }
 
- 
+export function changeInterestState(){
+  const intrestStateBtn = document.getElementsByClassName('changeIntrestState');
+  for (let i=0;i<intrestStateBtn.length;i++){
+    intrestStateBtn[i].onclick = (e) => {
+      console.log('sjsjsj')
+    }
+  }
+}
