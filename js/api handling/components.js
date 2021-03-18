@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = !true;
+    let isAuthenticated = false;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -271,7 +271,8 @@ export function userCard(data){
                     </div>
                     <div class="button mt-2 d-flex flex-row align-items-center"> <button
                             class="btn btn-sm btn-outline-primary w-100">View</button> <button
-                            class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
+                            class="btn btn-sm btn-primary identifyFollowBtns w-100 ml-2">Follow</button> 
+                    </div>
                 </div>
             </div>
         </div>

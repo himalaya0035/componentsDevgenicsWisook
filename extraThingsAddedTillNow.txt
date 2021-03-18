@@ -1,0 +1,6 @@
+passwordReset.html
+passwordResetSent.html
+setNewPassword.html
+PasswordResetComplete.html
+passwordChange.css
+todo : make changes in manageHooksEvents function, make api call after state change

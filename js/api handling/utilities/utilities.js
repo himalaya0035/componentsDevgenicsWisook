@@ -173,17 +173,26 @@ export function manageOnClickIntrestBox(){
 export function manageHooksClickEvents(classOfElement,toggleClass, existingClass){
   let bookmarkBtns = document.getElementsByClassName(classOfElement);
   for (let i=0;i<bookmarkBtns.length;i++){
-    bookmarkBtns[i].onclick = (e) => {
-      let clikcedBtn = e.target;
-      console.log(clikcedBtn)
-      if (clikcedBtn.classList.contains('fa')){
-        clikcedBtn.classList.toggle(toggleClass);
-        clikcedBtn.classList.toggle(existingClass)
-      }
-      else {
-        let faElement = clikcedBtn.getElementsByTagName('i')[0];
-        faElement.classList.toggle(toggleClass);
-        faElement.classList.toggle(existingClass)
+    bookmarkBtns[i].onclick = async (e) => {
+        let clikcedBtn = e.target;
+        const obj = {
+          title: 'foo',
+          body: 'bar',
+          userId: 1,
+        }
+        const isPostRequestOk = await postJsonData('https://jsonplaceholder.typicode.com/posts',obj);
+        if (isPostRequestOk){ 
+          if (clikcedBtn.classList.contains('fa')){
+            clikcedBtn.classList.toggle(toggleClass);
+            clikcedBtn.classList.toggle(existingClass)
+          }
+          else {
+            let faElement = clikcedBtn.getElementsByTagName('i')[0];
+            faElement.classList.toggle(toggleClass);
+            faElement.classList.toggle(existingClass)
+          }
+      }else {
+        alert('Something went wrong, please try again later');
       }
     }
   }
@@ -283,10 +292,10 @@ export function disableBtn(ele) {
   ele.style.color = '#666666';
 }
 
-export function enableBtn(ele) { 
+export function enableBtn(ele,bg,clr) { 
   ele.disabled = false;
-  ele.style.background = '#673AB7';
-  ele.style.color = 'white';
+  ele.style.background = bg;
+  ele.style.color = clr;
 }
 
 export function displayErrorMsg(msg) {
@@ -311,7 +320,7 @@ export function manageAddHookModalPreveiw(){
     try {
       removeErrorMsg();
       await constructSection('https://jsonplaceholder.typicode.com/todos/1',showPreviewHook)
-      enableBtn(addHookBtn)
+      enableBtn(addHookBtn,'#673AB7','white')
     }
     catch{
       displayErrorMsg('Invalid Url')
@@ -404,6 +413,38 @@ export function changeInterestState(){
   for (let i=0;i<intrestStateBtn.length;i++){
     intrestStateBtn[i].onclick = (e) => {
       console.log('sjsjsj')
+    }
+  }
+}
+
+export function toggleFollowBtn(){
+  const followBtns = document.getElementsByClassName('identifyFollowBtns');
+  for (let i=0;i<followBtns.length;i++){
+    followBtns[i].onclick = async () => {
+      let action = 'follow';
+      const obj = {
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+      }
+      followBtns[i].disabled = true;
+      const isPostRequestOk = await postJsonData('https://jsonplaceholder.typicode.com/posts',obj);
+      if (isPostRequestOk){ 
+        if (followBtns[i].classList.contains('btn-primary')){
+            followBtns[i].classList.toggle('btn-primary');
+            followBtns[i].classList.toggle('btn-danger');
+            followBtns[i].innerText = 'Unfollow';
+        }
+        else {
+            followBtns[i].classList.toggle('btn-primary');
+            followBtns[i].classList.toggle('btn-danger');
+            followBtns[i].innerText = 'Follow';
+            action = 'unfollow'; 
+        }
+      } else {
+        alert('Something went wrong, please try again later');
+      }
+      followBtns[i].disabled = false;
     }
   }
 }

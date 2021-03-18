@@ -114,6 +114,7 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     utility.manageSearchResults();
     utility.manageAddHookModalPreveiw();
     utility.loadLoginModalJs();
+    utility.toggleFollowBtn();
 }
 
 constructHomepage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')
