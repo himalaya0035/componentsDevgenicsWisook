@@ -1,4 +1,4 @@
-import { constructSection, postJsonData } from '../getAndPostRequest.js';
+import { constructSection, getJsonData, postJsonData } from '../getAndPostRequest.js';
 
 export function loadMainJsFile() {
   jQuery(function ($) {
@@ -309,9 +309,18 @@ export function removeErrorMsg() {
 export function manageAddHookModalPreveiw(){
   const addHookInputBox = document.getElementById('addHookUrl');
   const addHookBtn = document.getElementById('addHookBtnFinal')
-  // addHookBtn.onclick = async () => {
-  //   postJsonData('')
-  // }
+  let sendData;
+  addHookBtn.onclick = async () => {
+    const obj = {
+      description:sendData.description,
+      image:sendData.image,
+      site_name:sendData.site_name,
+      title:sendData.title,
+      type:sendData.type,
+      url:sendData.url,
+    }
+    await postJsonData('')
+  }
   const loader = document.getElementById('loader3')
   disableBtn(addHookBtn)
   addHookInputBox.addEventListener('input',async ()=>{
@@ -334,6 +343,7 @@ export function manageAddHookModalPreveiw(){
 }
 
 function showPreviewHook(data){
+  sendData = data;
   const previewHookTitle = document.getElementById('previewHookTitle');
   const previewHookImg = document.getElementById('previewHookImg');
   previewHookTitle.innerText = data.title;
@@ -447,4 +457,126 @@ export function toggleFollowBtn(){
       followBtns[i].disabled = false;
     }
   }
+}
+
+
+function enableLoaderTwo(loaderGif){
+  loaderGif.style.display = 'block';
+  console.log('block');
+  loaderGif.style.visibility = 1;
+  loaderGif.style.opacity = 1;
+}
+function disableLoaderTwo(loaderGif){
+  loaderGif.style.display = 'none';
+  console.log('none');
+  loaderGif.style.visibility = 0;
+  loaderGif.style.opacity = 0;
+}
+
+
+export function getFollowersAndFollowing(){
+  const followersAndFollowingBtns = document.getElementsByClassName('fAndFBtn');
+  const mainPageFAndFBtns = document.getElementsByClassName('mainPageFAnfFBtns');
+  let count = 0;
+  for (let i=0;i<followersAndFollowingBtns.length;i++){
+    followersAndFollowingBtns[i].onclick = async (e) => {
+      const action = e.target.id;
+      await helperFnFirst(action)
+    }
+    mainPageFAndFBtns[i].onclick = async (e) => {
+      console.log('main Page')
+      await helperFnFirst('following')
+    }  
+  }
+}
+
+async function helperFnFirst(action){
+    const loader = document.getElementById(`loader-${action}`)
+    enableLoaderTwo(loader)
+    await helperFunctionFAndF(action);
+    disableLoaderTwo(loader)
+}
+
+async function helperFunctionFAndF(action){
+  await constructSection('https://jsonplaceholder.typicode.com/todos/1',fillRespectiveData,action);
+}
+
+function fillRespectiveData(data,action){
+  if (action === 'following'){
+    let followingList = '';
+    for (let i=0;i<2;i++){
+      followingList += `
+      <div class="notification-list notification-list--unread" style="margin-bottom: 0px; border-bottom: 1px solid black;">
+      <div class="notification-list_content">
+          <div class="notification-list_img">
+              <a href="profile.html">
+                  <img src="img/Amy_Baker25.jpg" alt="">
+              </a>
+          </div>
+          <div class="notification-list_detail">
+              <a href="profile.html">
+                  <a href="profile.html">
+                      <p><b>Brijesh</b></p>
+                  </a>
+              </a>
+              <p class="text-muted"><small>developer</small></p>
+          </div>
+      </div>
+      <div class="notification-list_feature-img">
+      <button
+      class="btn btn-sm btn-primary identifyFollowBtns">Follow</button> 
+      <button
+       class="btn btn-sm btn-danger identifyFollowBtns">Unfollow</button> 
+      </div>
+  </div>
+      `
+    }
+    document.getElementById('nav-following').innerHTML = `
+          <div class="notification-ui_dd-content" >
+            ${followingList}
+            <div class="loader5" id="loader-following" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+            <img src="img/loader4.gif" alt="Spinning Loader">
+        </div>
+          </div>
+    `
+  }
+  else {
+    let followersList = '';
+    for (let i=0;i<2;i++){
+      followersList += `
+      <div class="notification-list notification-list--unread" style="margin-bottom: 0px; border-bottom: 1px solid black;">
+      <div class="notification-list_content">
+          <div class="notification-list_img">
+              <a href="profile.html">
+                  <img src="img/Amy_Baker25.jpg" alt="">
+              </a>
+          </div>
+          <div class="notification-list_detail">
+              <a href="profile.html">
+                  <a href="profile.html">
+                      <p><b>Brijesh</b></p>
+                  </a>
+              </a>
+              <p class="text-muted"><small>developer</small></p>
+          </div>
+      </div>
+      <div class="notification-list_feature-img">
+      <button
+      class="btn btn-sm btn-primary identifyFollowBtns">Follow</button> 
+      <button
+       class="btn btn-sm btn-danger identifyFollowBtns">Unfollow</button> 
+      </div>
+  </div>
+      `
+    }
+    document.getElementById('nav-followers').innerHTML = `
+          <div class="notification-ui_dd-content" >
+            ${followersList}
+            <div class="loader5" id="loader-followers" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+            <img src="img/loader4.gif" alt="Spinning Loader">
+        </div>
+          </div>
+    `
+  }
+  
 }

@@ -241,7 +241,9 @@ export function constructIntrestBox(){ // data here
     return(
         `
         <div class="intrestBox" style="background-image:url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60')">
-            <h1>Cars</h1>
+            <h1 style="text-align:center; margin-left:5px; margin-right:5px;  white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;">art and nature, flowers and animal</h1>
             <div class="colorOverlay"></div>
         </div>
         `
@@ -512,60 +514,20 @@ export function followersAndFollowingModal(){
                 </div>
                 <div class="modal-body" style="overflow-y:auto; height: 500px; padding: 0px;">
                     <div class="nav nav-tabs"  id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active"  id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-home" aria-selected="true">Following</a>
-                        <a class="nav-item nav-link" id="nav-followers-tab"  data-toggle="tab" href="#nav-followers" role="tab" aria-controls="nav-profile" aria-selected="false">Followers</a>
+                        <a class="nav-item nav-link active" style="padding:0px;" id="nav-following-tab" data-toggle="tab" href="#nav-following" role="tab" aria-controls="nav-home" aria-selected="true"><span class="fAndFBtn" style="display:block; padding:8px 16px;" id="following">Following</span></a>
+                        <a class="nav-item nav-link " id="nav-followers-tab" style="padding:0px;" data-toggle="tab" href="#nav-followers" role="tab" aria-controls="nav-profile" aria-selected="false"><span class="fAndFBtn" style="display:block; padding:8px 16px;" id="followers">Followers</span></a>
                       </div>
                     <div class="tab-content" id="nav-tabContentTwo">
-                        <div class="tab-pane fade show active" id="nav-following"  role="tabpanel" aria-labelledby="nav-following-tab">
-                            <div class="notification-ui_dd-content" >
-                                <div class="notification-list notification-list--unread" style="margin-bottom: 0px; border-bottom: 1px solid black;">
-                                    <div class="notification-list_content">
-                                        <div class="notification-list_img">
-                                            <a href="profile.html">
-                                                <img src="img/Amy_Baker25.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="notification-list_detail">
-                                            <a href="profile.html">
-                                                <a href="profile.html">
-                                                    <p><b>Brijesh</b></p>
-                                                </a>
-                                            </a>
-                                            <p class="text-muted"><small>developer</small></p>
-                                        </div>
-                                    </div>
-                                    <div class="notification-list_feature-img">
-                                        <button type="button" class="btn btn-secondary btn-sm">Follow</button>
-                                    </div>
-                                </div>
-                                <div class="notification-list notification-list--unread">
-                                    <div class="notification-list_content">
-                                        <div class="notification-list_img">
-                                            <a href="profile.html">
-                                                <img src="img/batman.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="notification-list_detail">
-                                            <a href="profile.html">
-                                                <a href="profile.html">
-                                                    <p><b>Rajesh</b></p>
-                                                </a>
-                                            </a>
-                                            <p class="text-muted"><small>CEO</small></p>
-                                        </div>
-                                    </div>
-                                    <div class="notification-list_feature-img">
-                                        <button type="button" class="btn btn-secondary btn-sm">Following</button>
-                                    </div>
-                                </div>
-                        
-
+                        <div class="tab-pane fade show fAndFpane active" id="nav-following" style="position:relative; height:460px;"  role="tabpanel" aria-labelledby="nav-following-tab">
+                            <div class="loader5" id="loader-following" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+                                <img src="img/loader4.gif" alt="Spinning Loader">
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="nav-followers" role="tabpanel" aria-labelledby="nav-followers-tab">
-                            
+                        <div class="tab-pane fade fAndFpane" id="nav-followers"   style="position:relative; height:460px;" role="tabpanel" aria-labelledby="nav-followers-tab">
+                            <div class="loader5" id="loader-followers" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+                                <img src="img/loader4.gif" alt="Spinning Loader">
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>

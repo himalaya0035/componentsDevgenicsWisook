@@ -34,7 +34,7 @@ function constructTopUsers(data){ // data here
         `
         <div class="usersToFollow" style="margin-bottom: 15px;">
             <h4 style="padding-bottom: 5px; letter-spacing: 1px; color:#f2f2f2">Top Users</h4>
-            <div class="usersScroller">
+            <div class="usersScroller" style="padding-bottom:15px;">
                 <div class="usersContainer">
                     ${topUsersList}
                 </div>

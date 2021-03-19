@@ -38,9 +38,9 @@ function constructTopProfileBody(){ // data here
         </div>
         <div class="followersAndFollowing">
             <a href="#" data-toggle="modal"
-            data-target="#followersFollowing"><span>313</span> Followers</a>
+            data-target="#followersFollowing" class="mainPageFAnfFBtns"><span>313</span> Followers</a>
             <a href="#" data-toggle="modal"
-            data-target="#followersFollowing"><span>290</span> Following</a>
+            data-target="#followersFollowing" class="mainPageFAnfFBtns"><span>290</span> Following</a>
         </div>
         `
     )
@@ -113,6 +113,7 @@ function constructProfilePage(){
     `
     rootElement.innerHTML = assemblePage;
     utility.addSlider('.hookScroller');
+    utility.getFollowersAndFollowing();
 }
 
 constructProfilePage();
