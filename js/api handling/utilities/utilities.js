@@ -582,3 +582,6 @@ function fillRespectiveData(data,action){
   
 }
 
+export function manageHookDescriptionLength(){
+  
+}

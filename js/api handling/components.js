@@ -215,7 +215,7 @@ export function hookCard(){  //data here
                 <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                     draggable="false">
                 <h5 class="hookTitle">Learn Js The modern Way Learn Js The modern Way</h5>
-                <a href="#"><i class="fa fa-expand openHook"></i></a>
+                <a href="#"><i class="fa fa-expand  openHook" title="view hook"></i></a>
                 <div class="hookOverlay"></div>
             </div>
             <div class="hookStats">
@@ -807,5 +807,35 @@ export function hookDescription(){
             </div>
         </div>
         `
+    )
+}
+
+export function hookCard2(data) {  //data here
+    return (
+        `
+         <div class="hookPost">
+            <div class="hookImgHolder">
+                <a href="javascript:void(0)"><img alt="" src="${data.image}"
+                    draggable="false"></a>
+                <h5 class="hookTitle">${data.title}</h5>
+                <a href="javascript:void(0)">${data.owner_data.is_owner ? `<i class="fa fa-trash openHook" style="font-size:20px;" title="Delete Hook" id="deleteHook"></i>` : `<i class="fa fa-paperclip openHook" style="font-size:20px;" title="Add to My Hooks" id="pinHook"></i>`} </a>
+                <div class="hookOverlay"></div>
+            </div>
+            <div class="hookStats">
+                <div id="${data.id}" class="statSection like" title="Like hook">
+                    <i id="${data.id}" class='${data.is_liked ? 'fa fa-heart' : 'fa fa-heart-o'}'></i>
+                </div>
+                <div id="${data.id}" class="statSection bookmark" title="Bookmark Hook">
+                    <i id="${data.id}" class='${data.is_bookmarked ? "fa fa-bookmark" : "fa fa-bookmark-o"}'></i>
+                </div>
+                <div class="statSection share" title="Share Hook">
+                    <i class="fa fa-share-alt"></i>
+                </div>
+                <div class="statSection redirect" title="Visit Url">
+                   <a href="${data.url}" target="_blank"><i class="fa fa-external-link"></i></a>
+                </div>
+            </div>
+         </div>
+         `
     )
 }

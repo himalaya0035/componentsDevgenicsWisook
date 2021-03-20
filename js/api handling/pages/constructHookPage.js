@@ -4,6 +4,35 @@ import * as utility from '../utilities/utilities.js'
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
 
+
+function refreshComments(){
+    document.getElementsByClassName('fa-refresh')[0].onclick = async () => {
+      document.getElementsByClassName('commentsSection')[0].innerHTML = await constructSection('https://jsonplaceholder.typicode.com/todos/1',constructHookCommentBox);
+      refreshComments()
+    }
+    
+}
+
+function postComment(){ // give this to priyansh chomu
+    const addCommentButton = document.getElementById('addCommentButton');
+    const addCommentInputBox = document.getElementById('addCommentInputBox');
+    addCommentButton.onclick = async () => {
+        await postJsonData();
+        refreshComments();
+        postComment();
+    }
+    addCommentButton.disabled=true;
+    addCommentInputBox.oninput = () => {
+        if(addCommentInputBox.value.length > 0){
+            addCommentButton.disabled = false;
+        }
+        else {
+            addCommentButton.disabled=true;  
+        }
+    }
+}
+
+
 async function constructHookUserAndDesc(data,urlTwo){
     let hookHtml = hookCard();
     let userHtml = userCard();
@@ -18,7 +47,9 @@ async function constructHookUserAndDesc(data,urlTwo){
             </div>
             <div class="userAndComments">
                 ${userHtml}
-                ${commentSectionData}
+                <div class="commentsSection">
+                    ${commentSectionData}
+                </div>
             </div>
         </div>
         `
@@ -32,7 +63,7 @@ function constructHookCommentBox(data){
     }
     return (
         `
-        <div class="commentsSection">
+        
             <div class="commentStatsAndRefresh" style="padding: 10px; background: gray; color: white; padding-bottom: 0px; display: flex; justify-content: space-between; align-items: center;">
                 <h6>3.2k Comments</h6>
                 <i class="fa fa-refresh" title="refresh" style="margin-bottom: 8px;"></i>
@@ -41,10 +72,10 @@ function constructHookCommentBox(data){
                 ${comments}
             </div>
             <div class="addComment">
-                <input type="text" placeholder="Post A Comment" spellcheck="false">
-                <button class="btn btn-secondary btn-sm">Post</button>
+                <input type="text" id="addCommentInputBox" placeholder="Post A Comment" spellcheck="false">
+                <button class="btn btn-secondary btn-sm" id="addCommentButton">Post</button>
             </div>
-        </div>
+        
         `
     )
 }
@@ -86,6 +117,7 @@ async function constructHookPage(urlOne,urlTwo){
     utility.manageAddHookModalPreveiw();
     utility.loadLoginModalJs();
     utility.toggleFollowBtn();
+    refreshComments();
 }
 
 constructHookPage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')
