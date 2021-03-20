@@ -210,6 +210,7 @@ function filterData(data,searchText){
     }
     let matches = arrayForResults.filter(arrElement => {
         const regex = new RegExp(`^${searchText}`,'gi');
+        console.log(regex)
         return arrElement.name.match(regex)
     })
     outputHtml(matches,searchText,count)
@@ -305,11 +306,11 @@ export function displayErrorMsg(msg) {
 export function removeErrorMsg() {
   document.getElementById('message').innerText = '';
 }
-
+let sendData;
 export function manageAddHookModalPreveiw(){
   const addHookInputBox = document.getElementById('addHookUrl');
   const addHookBtn = document.getElementById('addHookBtnFinal')
-  let sendData;
+
   addHookBtn.onclick = async () => {
     const obj = {
       description:sendData.description,
@@ -580,3 +581,4 @@ function fillRespectiveData(data,action){
   }
   
 }
+

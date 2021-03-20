@@ -4,3 +4,10 @@ setNewPassword.html
 PasswordResetComplete.html
 passwordChange.css
 todo : make changes in manageHooksEvents function, make api call after state change
+
+
+20 - 03 - 2021
+
+components.js
+single Comment and Hook Desscription added
+link:css login-register.css added in Hook.html

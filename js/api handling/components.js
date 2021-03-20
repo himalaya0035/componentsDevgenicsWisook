@@ -779,3 +779,33 @@ export function fillSingleNotificationElement(notificationType){ // also data he
           `
       )
   }
+
+export function singleComment(){
+    return (
+        `
+        <div class="singleComment" style="display: flex; align-items: flex-start;">
+            <img src="img/batman.jpg" style="width: 25px; height: 25px; object-position: top; border-radius: 50%; margin-right: 8px; object-fit:cover;" alt="" class="commenterImg">
+            <div class="nameAndComment">
+                 <h6 style="font-size: 13px; margin-bottom: 0px;">Himalaya Gupta</h6>
+                <p style="font-size: 14px; font-weight: 600; color: rgb(116, 114, 114);">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, eum!</p>
+            </div>
+        </div>
+        `
+    )
+}
+export function hookDescription(){
+    return(
+        `
+        <div class="descAndStats" >
+            <div class="hookStats2">
+                <div class="totalLikes"><i class="fa fa-heart"></i> 3.2k Likes</div>
+                <div class="totalViews"><i class="fa fa-eye"></i> 3.6k Views</div>
+                <div class="popularityScore"><i class="fa fa-bullseye"></i> 88% Score</div>
+            </div>
+            <div class="descHook">
+                <p>Learn modern JavaScript from scratch, and practice in an intuitive environment. The challenges are inspired by real-world projects to make sure that you're learning the best practices, one step at a time. Try the first 42 lessons, challenges, projects & flashcards for free. Upgrade to Pro Services ...</p>
+            </div>
+        </div>
+        `
+    )
+}
