@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = false;
+    let isAuthenticated = true;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -781,6 +781,7 @@ export function fillSingleNotificationElement(notificationType){ // also data he
   }
 
 export function singleComment(){
+    console.log('working')
     return (
         `
         <div class="singleComment" style="display: flex; align-items: flex-start;">
@@ -837,5 +838,92 @@ export function hookCard2(data) {  //data here
             </div>
          </div>
          `
+    )
+}
+
+export function createCollectionCard(){
+    let x = 6;
+    if (x < 4){
+        return (
+            `
+            <a class="card1" href="#">
+                <div class="collection">
+                <img src="https://th.bing.com/th/id/OIP.ZMIkHl9meMnoVEQSbBgTBgHaEK?w=271&h=180&c=7&o=5&pid=1.7">
+                </div>
+        
+                <div class="collectionOverlay"></div>
+                <h4 class="collectionName" > My collection </h4>
+            </a> 
+            `
+        )
+    }else {
+        return (
+            `
+            <a href="#" class="card1">
+            <div class="cl p">
+              <div class="collection">
+                <img src="https://www.bing.com/th?id=OIP.M9AsZ7Sm6Qq-LXpY92Tt2AHaEK&w=316&h=160&c=8&rs=1&qlt=90&pid=3.1&rm=2">
+              </div>
+            </div>
+      
+            <div class="cl q">
+              <div class="collection">
+                <img src="https://tse1.mm.bing.net/th/id/OET.b6b318b492f44537b42d7240709437cc?w=272&h=272&c=7&rs=1&o=5&pid=1.9">
+              </div>
+      
+            </div>
+      
+            <div class="cl r">
+              <div class="collection">
+                <img src="https://images.unsplash.com/photo-1477948879622-5f16e220fa42?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=60">
+              </div>
+            </div>
+      
+            <div class="cl s">
+              <div class="collection">
+                <img src="https://th.bing.com/th/id/OIP.ZMIkHl9meMnoVEQSbBgTBgHaEK?w=271&h=180&c=7&o=5&pid=1.7">
+              </div>
+            </div>
+      
+            <div class="collectionOverlay"></div>
+      
+            <h4 class="collectionName" > My collection </h4>
+        </a>
+            `
+        )
+    }
+}
+
+export function createCollectionModal(){
+    return (
+        `
+        <div class="modal fade" id="createCollectionModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered"  role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title w-100 font-weight-bold">Create Collection</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body ">
+                    <form accept-charset="UTF-8" action="#" method="POST" target="_blank">
+                        <div class="form-group">
+                            <label for="exampleInputName">Collection Name</label>
+                            <input type="text" name="collectionName" class="form-control" id="exampleInputName"
+                                placeholder="Name Your Collection" required="required">
+                        </div>
+                        <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description (Optional)</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe Your Collection"></textarea>
+  </div>
+                        <button type="submit" class="btn btn-success btn-sm">Create</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        `
     )
 }

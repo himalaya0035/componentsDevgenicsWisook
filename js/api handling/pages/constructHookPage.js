@@ -7,8 +7,7 @@ const loader = document.getElementById('loader');
 
 function refreshComments(){
     document.getElementsByClassName('fa-refresh')[0].onclick = async () => {
-      document.getElementsByClassName('commentsSection')[0].innerHTML = await constructSection('https://jsonplaceholder.typicode.com/todos/1',constructHookCommentBox);
-      refreshComments()
+      document.getElementsByClassName('allComments')[0].innerHTML = await constructSection('https://jsonplaceholder.typicode.com/todos/1',constructHookCommentBox);
     }
     
 }
@@ -18,8 +17,7 @@ function postComment(){ // give this to priyansh chomu
     const addCommentInputBox = document.getElementById('addCommentInputBox');
     addCommentButton.onclick = async () => {
         await postJsonData();
-        refreshComments();
-        postComment();
+        document.getElementsByClassName('fa-refresh')[0].click();
     }
     addCommentButton.disabled=true;
     addCommentInputBox.oninput = () => {
@@ -48,7 +46,17 @@ async function constructHookUserAndDesc(data,urlTwo){
             <div class="userAndComments">
                 ${userHtml}
                 <div class="commentsSection">
-                    ${commentSectionData}
+                    <div class="commentStatsAndRefresh" style="padding: 10px; background: gray; color: white; padding-bottom: 0px; display: flex; justify-content: space-between; align-items: center;">
+                        <h6>3.2k Comments</h6>
+                        <i class="fa fa-refresh" title="refresh" style="margin-bottom: 8px;"></i>
+                    </div>
+                    <div class="allComments">
+                        ${commentSectionData}
+                    </div>
+                    <div class="addComment">
+                        <input type="text" id="addCommentInputBox" placeholder="Post A Comment" spellcheck="false">
+                        <button class="btn btn-secondary btn-sm" id="addCommentButton">Post</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,23 +69,7 @@ function constructHookCommentBox(data){
     for (let i=0;i<2;i++){
         comments+= singleComment(); 
     }
-    return (
-        `
-        
-            <div class="commentStatsAndRefresh" style="padding: 10px; background: gray; color: white; padding-bottom: 0px; display: flex; justify-content: space-between; align-items: center;">
-                <h6>3.2k Comments</h6>
-                <i class="fa fa-refresh" title="refresh" style="margin-bottom: 8px;"></i>
-            </div>
-            <div class="allComments">
-                ${comments}
-            </div>
-            <div class="addComment">
-                <input type="text" id="addCommentInputBox" placeholder="Post A Comment" spellcheck="false">
-                <button class="btn btn-secondary btn-sm" id="addCommentButton">Post</button>
-            </div>
-        
-        `
-    )
+    return comments;
 }
 
 async function constructHookPage(urlOne,urlTwo){

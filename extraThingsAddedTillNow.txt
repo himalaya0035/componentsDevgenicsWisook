@@ -11,3 +11,7 @@ todo : make changes in manageHooksEvents function, make api call after state cha
 components.js
 single Comment and Hook Desscription added
 link:css login-register.css added in Hook.html
+
+
+collection.html done
+collection.css added
