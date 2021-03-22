@@ -582,6 +582,24 @@ function fillRespectiveData(data,action){
   
 }
 
-export function manageHookDescriptionLength(){
-  
+export function manageHookDescriptionLength(){ 
+}
+
+export function createColectionPostRequest(){
+  const createCollectionBtn = document.getElementById('createCollectionBtn');
+  const inputBtn = document.getElementById('collectionNameInput')
+  createCollectionBtn.disabled = true; 
+  createCollectionBtn.onclick = async () => {
+   const isPostRequestOk =  await postJsonData(url,obj);
+   if (isPostRequestOk) window.location.reload();
+   else alert('Something Went Wrong, try again later');
+  }
+  inputBtn.oninput = async () => {
+    if (inputBtn.value.length > 0) {
+      createCollectionBtn.disabled = false;
+    }
+    else {
+      createCollectionBtn.disabled = true;
+    }
+  }
 }

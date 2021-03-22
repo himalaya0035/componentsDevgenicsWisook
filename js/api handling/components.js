@@ -911,14 +911,11 @@ export function createCollectionModal(){
                     <form accept-charset="UTF-8" action="#" method="POST" target="_blank">
                         <div class="form-group">
                             <label for="exampleInputName">Collection Name</label>
-                            <input type="text" name="collectionName" class="form-control" id="exampleInputName"
+                            <input type="text" name="collectionName" class="form-control" id="collectionNameInput"
                                 placeholder="Name Your Collection" required="required">
                         </div>
-                        <div class="form-group">
-    <label for="exampleFormControlTextarea1">Description (Optional)</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe Your Collection"></textarea>
-  </div>
-                        <button type="submit" class="btn btn-success btn-sm">Create</button>
+            
+                        <button type="submit" id="createCollectionBtn" class="btn btn-success btn-sm">Create</button>
                     </form>
                 </div>
             </div>

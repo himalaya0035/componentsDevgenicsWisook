@@ -1,35 +1,33 @@
-import { getJsonData, constructSection, postJsonData } from '../getAndPostRequest.js';
-import { constructSidebar, contstructNavbar, addHookModal, managePagination, fillSingleNotificationElement, loginAndSignupModal, createCollectionCard, createCollectionModal} from '../components.js'
+import { constructSection} from '../getAndPostRequest.js';
+import { constructSidebar, contstructNavbar, addHookModal, fillSingleNotificationElement, loginAndSignupModal} from '../components.js'
 import * as utility from '../utilities/utilities.js'
 
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
 
-function constructCollections(){
-    let collections = '';
-    for (let i=0;i<5;i++){
-        collections += createCollectionCard();
+function constrcuctNotifications(){
+    let notifications = '';
+    for (let i=0;i<6;i++){
+        notifications += fillSingleNotificationElement('comment');
     }
     return (
         `
-        <div class="collectionContainer">
-            <div class="addCollectionBtn" data-toggle="modal" data-target="#createCollectionModal" title="Create a Collection">
-                <div class="plusContainer"  style="background: rgb(21,21, 21); border-radius: 50%; height: 100px; width: 100px; display: flex; justify-content: center; align-items: center; ">
-                    <i class="fa fa-plus" style="color: white; font-size: 50px;"></i>
-                </div>
+        <section class="">
+            <h3 class="heading-line" style="margin-bottom: 20px;">Notifications <i class="fa fa-bell text-white"></i></h3>
+            <div class="notification-ui_dd-content">
+                ${notifications}
             </div>
-            ${collections}
-        </div>
+        </section>
         `
     )
 }
 
-async function constructCollectionsPage(urlOne){
+async function constrcuctNotificationsPage(urlOne){
     utility.enableLoader(rootElement,loader);
+
     const sidebarHtml = constructSidebar();
-    const collectionsHtml = await constructSection(urlOne,constructCollections);
+    const notificationsHtml = await constructSection(urlOne,constrcuctNotifications);
     const navbarHtml = contstructNavbar();
-    const createCollectionModalHtml = createCollectionModal();
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = loginAndSignupModal();
     const  assemblePage = `
@@ -43,10 +41,9 @@ async function constructCollectionsPage(urlOne){
                     <i class="fa fa-plus" style="font-size:20px; color: white;"></i>
                 </div>
                 <div class="pageWrapper" style="padding-bottom: 0px;">
-                    ${collectionsHtml}
+                    ${notificationsHtml}
                 </div>
                 ${hookModal}
-                ${createCollectionModalHtml}
                 ${signupAndSigninModalHtml}
         </main>
     </div>
@@ -59,9 +56,8 @@ async function constructCollectionsPage(urlOne){
     utility.manageOnClickIntrestBox(); 
     utility.manageSearchResults();
     utility.manageAddHookModalPreveiw();
-    utility.createColectionPostRequest();
     utility.loadLoginModalJs();
 }
 
-constructCollectionsPage('https://jsonplaceholder.typicode.com/todos/1')
-    .then( () => console.log('Promise Resolved'))
+constrcuctNotificationsPage('https://jsonplaceholder.typicode.com/todos/1')
+    .then(() => console.log('Promise Resolved'))
