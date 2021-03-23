@@ -74,7 +74,7 @@ function constructHooksAndCollectionsTabbing(){ // data here
                             </h5>
                           
                     </div>
-                    <div class="hookScroller">
+                    <div class="hookScroller disappearScrollbar">
                         ${userHookPosts}
                     </div>
                 </div>
@@ -92,7 +92,7 @@ function constructHooksAndCollectionsTabbing(){ // data here
                                 All</a>
                 </div>
                
-                    <div class="collectionsScroller">
+                    <div class="collectionsScroller disappearScrollbar">
                         <div class="collectionsContainer">
                             ${userCollections}
                         </div>

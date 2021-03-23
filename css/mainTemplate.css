@@ -12,7 +12,6 @@
     transition: 0.5s;
 }
 
-
 .intrestBox h1,.hookTitle,.sidebar-wrapper .sidebar-menu ul li a .menu-text,.sidebar-wrapper .sidebar-header .user-info>span {
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -35,7 +34,6 @@
     max-width: 450px;
     width: 100%;
 }
-
 
 .searchBar button,.searchBar2 button {
     height: 34px;
@@ -135,7 +133,7 @@
 .searchBar2 {
     display: none;
 }
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 15px;
     background-color: #000;
     height: 0px;
@@ -143,29 +141,13 @@
 
 body::-webkit-scrollbar-thumb {
     background-color: #696660;   
-  }
+  } */
 
 
-  #style-1::-webkit-scrollbar-track
-  {
-      /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
-      border-radius: 10px;
-      background-color: #F5F5F5;
-  }
   
-  #style-1::-webkit-scrollbar
-  {
-      width: 12px;
-      background-color: #F5F5F5;
-  }
-  
-  #style-1::-webkit-scrollbar-thumb
-  {
-      border-radius: 10px;
-      /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
-      background-color: #555;
-  }
-  
+  div.disappearScrollbar{
+    overflow-x:hidden;
+}
 
 @media screen and (max-width:925px) {
     .searchBar {
@@ -254,4 +236,12 @@ body::-webkit-scrollbar-thumb {
         background: black;
         border-radius: 50%;
     }
+}
+
+@media screen and (max-width:700px){
+      
+  div.disappearScrollbar{
+    overflow-x:auto;
+}
+
 }

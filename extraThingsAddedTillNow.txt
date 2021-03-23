@@ -18,3 +18,14 @@ Things we need to do
 17 - Manage hook Desscription
 18 - bookmarked page js
 19 - enter and back button js
+
+
+Things Priyansh need to update 
+1- disappearScrollbar class
+  div.disappearScrollbar {
+    overflow-x: hidden;
+}
+2- Profile Collections.css 
+3- collections added in profile 
+4- hook.css updated
+5- interest page added
