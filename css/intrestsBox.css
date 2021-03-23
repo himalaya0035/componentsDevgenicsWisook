@@ -4,7 +4,7 @@
     padding-right: 10px;
     flex-wrap: wrap;
   }
-  .intrestBox {
+  .intrestBox,.intrestBox2{
     width: 120px;
     height: 90px;
     margin-right: 5px;
@@ -19,7 +19,10 @@
     transition: 0.25s;
     cursor: pointer;
   }
-  .intrestBox h1 {
+  .intrestBox2 {
+    cursor:unset;
+  }
+  .intrestBox h1,.intrestBox2 h1 {
     font-size: 18px;
     color: white;
     z-index: 1;
@@ -47,7 +50,7 @@
     justify-content: space-between;
   }
 
-  .mainPageIntrestBoxs .intrestBox {
+  .mainPageIntrestBoxs .intrestBox2 {
     width: 296px;
     height: 200px;
     margin-left: 0px;
@@ -55,14 +58,14 @@
     font-size: 50px;
     box-shadow: 0px 0px 3px #fff;
   }
-  .mainPageIntrestBoxs .intrestBox:hover{
+  .mainPageIntrestBoxs .intrestBox2:hover{
     transform: scale(1);
     border: none;
   }
   .mainPageIntrestBoxs .colorOverlay{
     opacity: 0.45;
   }
-  .mainPageIntrestBoxs .intrestBox:hover .colorOverlay {
+  .mainPageIntrestBoxs .intrestBox2:hover .colorOverlay {
     opacity: 0.6;
   }
   .mainPageIntrestBoxs .intrestBox h1{
@@ -80,14 +83,83 @@
     justify-content: center;
     align-items: center;
     background: white;
+    cursor: pointer;
+  }
+  .viewInterestHooks{
+    right: 40px;
+    text-decoration: none;
+  }
+  .viewInterestHooks:hover {
+    text-decoration: none;
   }
   .followOrRemove i {
     font-size: 20px;
     color: black;
   }
-@media screen and (max-width:500px){
-    .intrestBox{
-      width: 115px;
+  @media screen and (max-width:900px){
+    .mainPageIntrestBoxs .intrestBox2 {
+      width: 290px;
     }
+  }
+  @media screen and (max-width:650px){
+    .mainPageIntrestBoxs .intrestBox2 {
+      width: 280px;
+      height:210px;
+    }
+    .intrestsBoxContainer h4 {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width:600px){
+    .mainPageIntrestBoxs {
+      justify-content: center;
+    }
+    .mainPageIntrestBoxs .intrestBox2 {
+      width: 320px;
+      height:210px;
+    }
+    .intrestsBoxContainer h4 {
+      text-align: center;
+    }
+  }
+  @media screen and (max-width:420px){
+    .intrestsBoxContainer h4 {
+      text-align: left;
+    }
+    .mainPageIntrestBoxs {
+      justify-content: space-between;
+    }
+    .mainPageIntrestBoxs .intrestBox2 {
+      width: 183px;
+      height: 120px;
+    }
+  } 
+@media screen and (max-width:400px){
+    .mainPageIntrestBoxs .intrestBox2 {
+      width: 173px;
+      height: 120px;
+    }
+  } 
+@media screen and (max-width:380px){
+  .mainPageIntrestBoxs .intrestBox2 {
+    width: 163px;
+    height: 120px;
+  }
+} 
+@media screen and (max-width:360px) {
+  .mainPageIntrestBoxs .intrestBox2 {
+    width: 155px;
+    height: 105px;
+  }
+  .followOrRemove {
+    width: 25px;
+    height: 25px;
+  }
+  .viewInterestHooks {
+    right: 35px;
+  }
+  .followOrRemove i {
+    font-size: 15px;
+  }
 }
 

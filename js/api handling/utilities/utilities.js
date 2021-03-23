@@ -582,8 +582,6 @@ function fillRespectiveData(data,action){
   
 }
 
-export function manageHookDescriptionLength(){ 
-}
 
 export function createColectionPostRequest(){
   const createCollectionBtn = document.getElementById('createCollectionBtn');
@@ -603,3 +601,32 @@ export function createColectionPostRequest(){
     }
   }
 }
+
+export function manageInterestFollowOrRemove(classOfElement,toggleClass, existingClass){
+  let followOrRemoveBtns = document.getElementsByClassName(classOfElement);
+  for (let i=0;i<followOrRemoveBtns.length;i++){
+    followOrRemoveBtns[i].onclick = async (e) => {
+        let clikcedBtn = e.target;
+        const obj = {
+          title: 'foo',
+          body: 'bar',
+          userId: 1,
+        }
+          if (clikcedBtn.classList.contains('fa')){
+            clikcedBtn.classList.toggle(toggleClass);
+            clikcedBtn.classList.toggle(existingClass)
+          }
+          else {
+            let faElement = clikcedBtn.getElementsByTagName('i')[0];
+            faElement.classList.toggle(toggleClass);
+            faElement.classList.toggle(existingClass)
+          }
+          const isPostRequestOk = await postJsonData('https://jsonplaceholder.typicode.com/posts',obj);
+          if (!isPostRequestOk) alert('Something Went Wrong, Try Again Later');
+    }
+  }
+}
+
+// export function manageHookDescriptionLength(){
+//   const hookDesc = document.get
+// }

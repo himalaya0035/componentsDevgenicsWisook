@@ -9,12 +9,15 @@ function constructAllIntrests(){
     let interestList = '';
     for (let i=0;i<5;i++){
         interestList += `
-        <div class="intrestBox">
+        <div class="intrestBox2">
         <h1>Shopping</h1>
         <div class="colorOverlay"></div>
-        <div class="followOrRemove">
+        <div class="followOrRemove" title="Add/Remove Interest">
             <i class="fa fa-trash changeIntrestState"></i>
         </div>
+        <a  href="intrestHooks.html" title="View Interest Hooks" class="viewInterestHooks followOrRemove">
+            <i class="fa fa-expand changeIntrestState"></i>
+        </a>
     </div>
         `
     }
@@ -68,7 +71,7 @@ async function constructIntrestsPage(urlOne){
     utility.manageSearchResults();
     utility.manageAddHookModalPreveiw();
     utility.loadLoginModalJs();
-    utility.changeInterestState();
+    utility.manageInterestFollowOrRemove('followOrRemove','fa-trash','fa-plus');
 }
 
 constructIntrestsPage('https://jsonplaceholder.typicode.com/todos/1')

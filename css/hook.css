@@ -108,13 +108,15 @@
 }
 .descHook {
     padding:5px 12px;
-    overflow-y: auto;
 }
+
 .descHook p {
     text-align: justify;
     font-size: 17px;
     font-weight: 620;
     color:rgb(92, 88, 88);
+    height: 150px;
+   overflow:hidden;
 }
 
 
