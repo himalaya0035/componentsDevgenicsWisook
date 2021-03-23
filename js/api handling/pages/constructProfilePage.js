@@ -1,5 +1,5 @@
 import { getJsonData, constructSection, postJsonData } from '../getAndPostRequest.js';
-import { hookCard, editProfileModal, followersAndFollowingModal} from '../components.js'
+import { hookCard, editProfileModal, followersAndFollowingModal, createCollectionCard} from '../components.js'
 import * as utility from '../utilities/utilities.js'
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
@@ -51,7 +51,10 @@ function constructHooksAndCollectionsTabbing(){ // data here
     for (let i=0;i<12;i++){
         userHookPosts += hookCard(); // send individual data here ex (data[i])
     }
-
+    let userCollections = '';
+    for (let i=0;i<6;i++){
+        userCollections += createCollectionCard();
+    }
     return (
         `
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -68,10 +71,8 @@ function constructHooksAndCollectionsTabbing(){ // data here
                     <div class="topHeader">
                         <h5 style="padding-bottom: 0px; letter-spacing: 1px; color:#f2f2f2">User's
                             Hooks
-                            </h4>
-                            <a href="#"
-                                style="color: white; font-size: 16px; text-decoration: none;">View
-                                All</a>
+                            </h5>
+                          
                     </div>
                     <div class="hookScroller">
                         ${userHookPosts}
@@ -80,7 +81,25 @@ function constructHooksAndCollectionsTabbing(){ // data here
             </div>
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-            aria-labelledby="nav-profile-tab">...</div>
+            aria-labelledby="nav-profile-tab">
+            <div class="hooksContainer">
+                <div class="topHeader">
+                    <h5 style="padding-bottom: 0px; letter-spacing: 1px; color:#f2f2f2">User's
+                        Collections
+                    </h5>
+                    <a href="collections.html"
+                                style="color: white; font-size: 16px; text-decoration: none;">View
+                                All</a>
+                </div>
+               
+                    <div class="collectionsScroller">
+                        <div class="collectionsContainer">
+                            ${userCollections}
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
     </div>
 
         `
@@ -113,6 +132,7 @@ function constructProfilePage(){
     `
     rootElement.innerHTML = assemblePage;
     utility.addSlider('.hookScroller');
+    utility.addSlider('.collectionsScroller')
     utility.getFollowersAndFollowing();
 }
 

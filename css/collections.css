@@ -43,6 +43,7 @@
     cursor: pointer;
 }
 
+
 .collectionOverlay {
     position: absolute;
     width: 100%;
@@ -87,10 +88,6 @@ div.s {
 .collection {
     width: 100%;
     height: 100%;
-}
-
-div .cl .p .q .r .s {
-    width: 50%;
 }
 
 .collection img {

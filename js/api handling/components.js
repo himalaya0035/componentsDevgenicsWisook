@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = true;
+    let isAuthenticated = false;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -764,6 +764,10 @@ export function fillSingleNotificationElement(notificationType){ // also data he
                   </div>
                   <div class="modal-footer">
                       <div class="forgot login-footer">
+                        <span>
+                              <a href="#!" id="">Forgot Password ?</a>
+                              </span>
+                              <br>
                           <span>Looking to
                               <a href="#!" id="showRegisterForm">create an account</a>
                               ?</span>

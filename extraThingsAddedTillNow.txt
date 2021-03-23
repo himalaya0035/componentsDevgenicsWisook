@@ -1,17 +1,20 @@
-passwordReset.html
-passwordResetSent.html
-setNewPassword.html
-PasswordResetComplete.html
-passwordChange.css
-todo : make changes in manageHooksEvents function, make api call after state change
-
-
-20 - 03 - 2021
-
-components.js
-single Comment and Hook Desscription added
-link:css login-register.css added in Hook.html
-
-
-collection.html done
-collection.css added
+Things we need to do 
+1- Accounts Page 
+2- Make Login / Signup Modal function
+3- Interests Page (Make this function as well)
+4- Latest Feed Problem ,in priyansh`s copy
+5- Add hook to collection Button
+6- Integrate Share modal into the site
+7- Check all links 
+8- Set interval for comment in hook Page
+9- add default hook image, collection image, cover image
+10 - Integrate SEO into the site
+11 - Render Collections in users Profile
+12- Remove view all from profile Page
+13 - manage notifications dropdown in sidebar
+14 -If user selects no interest then show you have not selected any interest, explore Interests
+15 - Remove all console.log
+16 - *MOST IMPORTANT : MANAGE SCROLLBAR ( THAT BITCH)*
+17 - Manage hook Desscription
+18 - bookmarked page js
+19 - enter and back button js
