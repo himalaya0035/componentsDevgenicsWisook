@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = false;
+    let isAuthenticated = !false;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -54,62 +54,10 @@ export function constructSidebar(){
         <!-- sidebar-footer  -->
         <div class="sidebar-footer" style="background-color: black; ">
             <div class="dropdown" title="Notifications">
-
-                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="notifications.html"  aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-bell"></i>
                     <span class="badge-sonar"></span>
                 </a>
-                <div class="dropdown-menu notifications" aria-labelledby="dropdownMenuMessage">
-                    <div class="notifications-header">
-                        <i class="fa fa-bell"></i>
-                        Notifications
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification-content">
-                            <div class="icon">
-                                <i class="fas fa-check text-success border border-success"></i>
-                            </div>
-                            <div class="content">
-                                <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. In totam explicabo</div>
-                                <div class="notification-time">
-                                    6 minutes ago
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification-content">
-                            <div class="icon">
-                                <i class="fas fa-exclamation text-info border border-info"></i>
-                            </div>
-                            <div class="content">
-                                <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. In totam explicabo</div>
-                                <div class="notification-time">
-                                    Today
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification-content">
-                            <div class="icon">
-                                <i class="fas fa-exclamation-triangle text-warning border border-warning"></i>
-                            </div>
-                            <div class="content">
-                                <div class="notification-detail">Lorem ipsum dolor sit amet consectetur adipisicing
-                                    elit. In totam explicabo</div>
-                                <div class="notification-time">
-                                    Yesterday
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-center" href="notifications.html">View all notifications</a>
-                </div>
             </div>
             ${sidebarFooterOptions}
             <div class="pinned-footer">
@@ -166,14 +114,14 @@ function getSidebarOptions(isAuthenticated){
     return (
         `
         <div class="dropdown" title="explore settings">
-            <a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-cog"></i>
 
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
-                <a class="dropdown-item" href="#">Accounts</a>
-                <a class="dropdown-item" href="#">Privacy Notice</a>
-                <a class="dropdown-item" href="#">Terms And Conditions</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-key" style="font-size:12px; font-weight:bold;"></i> Change Password</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Privacy Notice</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-question"></i> Learn More</a>
             </div>
          </div>
     
@@ -225,7 +173,7 @@ export function hookCard(){  //data here
                 <div class="statSection bookmark" title="Bookmark Hook">
                     <i class="fa fa-bookmark-o"></i>
                 </div>
-                <div class="statSection share" title="Share Hook">
+                <div class="statSection share" data-toggle="modal" data-target="#shareModal" title="Share Hook">
                     <i class="fa fa-share-alt"></i>
                 </div>
                 <div class="statSection redirect" title="Visit Url">
@@ -715,17 +663,13 @@ export function fillSingleNotificationElement(notificationType){ // also data he
                   <div class="modal-body">
                       <div class="box">
                           <div class="content">
-                              <div class="social">
-                                  <a class="circle github" href="#">
-                                      <i class="fa fa-github fa-fw"></i>
-                                  </a>
-                                  <a id="google_login" class="circle google" href="#">
-                                      <i class="fa fa-google-plus fa-fw"></i>
-                                  </a>
-                                  <a id="facebook_login" class="circle facebook" href="#">
-                                      <i class="fa fa-facebook fa-fw"></i>
-                                  </a>
-                              </div>
+                        
+                          <div class="google-btn">
+                            <div class="google-icon-wrapper">
+                              <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                            </div>
+                            <p class="btn-text"><b>Sign in with google</b></p>
+                          </div>
                               <div class="division">
                                   <div class="line l"></div>
                                   <span>or</span>
@@ -846,7 +790,7 @@ export function hookCard2(data) {  //data here
 }
 
 export function createCollectionCard(){
-    let x = 6;
+    let x = 1;
     if (x < 4){
         return (
             `
@@ -928,3 +872,58 @@ export function createCollectionModal(){
         `
     )
 }
+
+
+// export function shareModal(){
+//     return (
+//         `
+//         <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+//         aria-hidden="true">
+//         <div class="modal-dialog" role="document">
+//           <div class="modal-content">
+//             <div class="modal-header">
+//               <h5 class="modal-title" id="exampleModalLabel">Share via</h5>
+//               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//                 <span aria-hidden="true">&times;</span>
+//               </button>
+//             </div>
+//             <div class="modal-body">
+//               <div class="share-btn-container">
+//                 <div class="d-grid gap-2">
+//                   <button class="btn btn-light btn-block" type="button">
+//                     <a href="#" class="facebook-btn">
+//                       <i class="fa fa-facebook " style="color:#3b5998;"> Facebook</i>
+//                     </a>
+//                   </button>
+//                   <button class="button" data-sharer="twitter" data-width="800" data-height="600" data-title="h" data-url="www.google.com">Share!</button>
+//                   <button class="btn btn-light btn-block"  type="button">
+//                     <a href="#" class="twitter-btn">
+//                       <i class="fa fa-twitter"> Twitter</i>
+//                     </a>
+//                   </button>
+//                   <button class="btn btn-light btn-block" type="button">
+//                   <a href="#" class="whatsapp-btn">
+//                     <i class="fa fa-whatsapp" style="color:#4FCE5D;"> Whatsapp</i>
+//                   </a>
+//                 </button>
+              
+              
+//                   <button class="btn btn-light btn-block" type="button" onclick="Copy();">
+//                     Copy Link
+//                   </button>
+//                   <br>
+//                   <input type="text" id="urlCopied"  style="width:100%; max-width:500px;">
+              
+              
+              
+//                 </div>
+//               </div>
+              
+//             </div>
+            
+//           </div>
+//         </div>
+//       </div>
+//         `
+//     )
+// }

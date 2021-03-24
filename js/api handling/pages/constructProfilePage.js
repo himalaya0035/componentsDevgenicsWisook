@@ -51,6 +51,8 @@ function constructHooksAndCollectionsTabbing(){ // data here
     for (let i=0;i<12;i++){
         userHookPosts += hookCard(); // send individual data here ex (data[i])
     }
+
+
     let userCollections = '';
     for (let i=0;i<6;i++){
         userCollections += createCollectionCard();

@@ -72,6 +72,7 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     const pagination = managePagination(53);
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = loginAndSignupModal();
+    // const sharemodalHtml = shareModal();
     // const notificationHtml = fillSingleNotificationElement('comment'); // for loop use krke sare data ke liye bhi use kr skte
     // console.log(notificationHtml)
     let assemblePage = '';
@@ -94,6 +95,7 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
                         ${pagination}
                     </div>
                     ${hookModal}
+                    
                     ${signupAndSigninModalHtml}
             </main>
         </div>
@@ -113,10 +115,11 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     utility.manageHooksClickEvents('like','fa-heart','fa-heart-o');
     utility.manageSearchResults();
     utility.manageAddHookModalPreveiw();
+    utility.shareHookToVariousPlatforms();
     utility.loadLoginModalJs();
     utility.toggleFollowBtn();
 }
 
 constructHomepage('https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1','https://jsonplaceholder.typicode.com/todos/1')
   .then(() => console.log("prmoise resolved"))
-  .catch((err) => console.log(err.message));
+  

@@ -1,10 +1,10 @@
 Things we need to do 
-1- Accounts Page 
-2- Make Login / Signup Modal function
-3- Interests Page (Make this function as well)
-4- Latest Feed Problem ,in priyansh`s copy
-5- Add hook to collection Button
-6- Integrate Share modal into the site
+1- Accounts Page (doing right now)
+2- Make Login / Signup Modal function (done)
+3- Interests Page (Make this function as well) (done)
+4- Latest Feed Problem ,in priyansh`s copy 
+5- Add hook to collection Button 
+6- Integrate Share modal into the site (doing right now) 
 7- Check all links 
 8- Set interval for comment in hook Page
 9- add default hook image, collection image, cover image
@@ -29,3 +29,21 @@ Things Priyansh need to update
 3- collections added in profile 
 4- hook.css updated
 5- interest page added
+
+
+// things doing right now 
+1- Account page
+2- Share modal
+
+// things added
+1-   <a href="notifications.html"  aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bell"></i>
+                    <span class="badge-sonar"></span>
+                </a>
+2- remove #! in settings icon, added #
+3-     <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
+                <a class="dropdown-item" href="#"><i class="fa fa-key" style="font-size:12px; font-weight:bold;"></i> Change Password</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Privacy Notice</a>
+                <a class="dropdown-item" href="#"><i class="fa fa-question"></i> Learn More</a>
+            </div>
+4-

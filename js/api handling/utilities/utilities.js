@@ -627,6 +627,25 @@ export function manageInterestFollowOrRemove(classOfElement,toggleClass, existin
   }
 }
 
-// export function manageHookDescriptionLength(){
-//   const hookDesc = document.get
-// }
+
+function addTitleAndUrlTobutton(title,url){
+  const sharingButtons = document.getElementsByClassName('sharingButtons');
+  for (let i=0;i<sharingButtons.length;i++){
+    sharingButtons[i].setAttribute('data-title',title);
+    sharingButtons[i].setAttribute('data-url',url);
+  }
+  document.getElementById('copyUrl').value = 'Copy URL : ' + url;
+}
+
+export function shareHookToVariousPlatforms(){
+  const shareOnHook = document.getElementsByClassName('share');
+  for (let i=0;i<shareOnHook.length;i++){
+    shareOnHook[i].onclick = (e) => {
+      const parentOne = e.target.closest('.hookPost');
+      const title = parentOne.getElementsByClassName('hookTitle')[0].innerText;
+      const url = parentOne.getElementsByClassName('redirect')[0].getElementsByTagName('a')[0].href;
+      addTitleAndUrlTobutton(title,url);
+    }
+  }
+
+}

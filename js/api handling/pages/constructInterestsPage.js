@@ -70,8 +70,9 @@ async function constructIntrestsPage(urlOne){
     utility.manageOnClickIntrestBox(); 
     utility.manageSearchResults();
     utility.manageAddHookModalPreveiw();
-    utility.loadLoginModalJs();
     utility.manageInterestFollowOrRemove('followOrRemove','fa-trash','fa-plus');
+    utility.loadLoginModalJs();
+  
 }
 
 constructIntrestsPage('https://jsonplaceholder.typicode.com/todos/1')
