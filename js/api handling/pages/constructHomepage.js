@@ -1,5 +1,5 @@
 import { getJsonData, constructSection, postJsonData } from '../getAndPostRequest.js';
-import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination, signupAndSigninModal, fillSingleNotificationElement, loginAndSignupModal} from '../components.js'
+import { constructSidebar, contstructNavbar, hookCard, userCard, addHookModal, managePagination, signupAndSigninModal, fillSingleNotificationElement, loginAndSignupModal, learnMoreModal, privacyModal} from '../components.js'
 import * as utility from '../utilities/utilities.js'
 const rootElement = document.getElementById('rootElement');
 const loader = document.getElementById('loader');
@@ -72,6 +72,8 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
     const pagination = managePagination(53);
     const hookModal = addHookModal();
     const signupAndSigninModalHtml = loginAndSignupModal();
+    const learnMoreModalHtml = learnMoreModal()
+    const privacyModalHtml = privacyModal();
     // const sharemodalHtml = shareModal();
     // const notificationHtml = fillSingleNotificationElement('comment'); // for loop use krke sare data ke liye bhi use kr skte
     // console.log(notificationHtml)
@@ -95,7 +97,8 @@ async function constructHomepage(urlOne,UrlTwo,urlThree){
                         ${pagination}
                     </div>
                     ${hookModal}
-                    
+                    ${learnMoreModalHtml}
+                    ${privacyModalHtml}
                     ${signupAndSigninModalHtml}
             </main>
         </div>

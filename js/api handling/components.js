@@ -120,8 +120,8 @@ function getSidebarOptions(isAuthenticated){
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuMessage">
                 <a class="dropdown-item" href="#"><i class="fa fa-key" style="font-size:12px; font-weight:bold;"></i> Change Password</a>
-                <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Privacy Notice</a>
-                <a class="dropdown-item" href="#"><i class="fa fa-question"></i> Learn More</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#privacyModal"><i class="fa fa-lock"></i> Privacy Notice</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#learnMoreModal"><i class="fa fa-question"></i> Learn More</a>
             </div>
          </div>
     
@@ -248,9 +248,12 @@ export function contstructNavbar(){
             <input type="text" class="searchInput" spellcheck="false" placeholder="Search Hooks ...">
             <i class="fa fa-search searchIcon"></i>
         </div>
-        <button type="button" id="addHook" class="btn btn-outline " data-toggle="modal"
+        <button type="button" id="addHook" style="margin-right:15px;" class="btn btn-outline " data-toggle="modal"
             data-target="#exampleModalCenter" title="Post a hook"><i class="fa fa-plus"></i> Hook
             It</button>
+            <button type="button" id="learnMore"  class="btn btn-info " data-toggle="modal"
+            data-target="#learnMoreModal" style="color:white;" title="Post a hook"> Promote your Website
+            </button>
         <div class="mobileNavbar">
             <div class="sidebar-item sidebar-brand">
                 <a href="#"
@@ -259,7 +262,7 @@ export function contstructNavbar(){
                         style="margin-right: 10px;"> WISOOK</a>
             </div>
             <div class="mobileNavbarOption">
-                <i class="fa fa-search searchIconMobile"></i>
+                <i class="fa fa-search searchIconMobile"></i> 
                 <div class="mobileSidebarToggler" id="toggle-sidebar2">
                     <img src="img/professor.jpg" alt="" width="35" height="35" class="mobileProfileImage">
                     <div class="mobileSidebarTogglerBar">
@@ -873,57 +876,80 @@ export function createCollectionModal(){
     )
 }
 
-
-// export function shareModal(){
-//     return (
-//         `
-//         <div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-//         aria-hidden="true">
-//         <div class="modal-dialog" role="document">
-//           <div class="modal-content">
-//             <div class="modal-header">
-//               <h5 class="modal-title" id="exampleModalLabel">Share via</h5>
-//               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-//                 <span aria-hidden="true">&times;</span>
-//               </button>
-//             </div>
-//             <div class="modal-body">
-//               <div class="share-btn-container">
-//                 <div class="d-grid gap-2">
-//                   <button class="btn btn-light btn-block" type="button">
-//                     <a href="#" class="facebook-btn">
-//                       <i class="fa fa-facebook " style="color:#3b5998;"> Facebook</i>
-//                     </a>
-//                   </button>
-//                   <button class="button" data-sharer="twitter" data-width="800" data-height="600" data-title="h" data-url="www.google.com">Share!</button>
-//                   <button class="btn btn-light btn-block"  type="button">
-//                     <a href="#" class="twitter-btn">
-//                       <i class="fa fa-twitter"> Twitter</i>
-//                     </a>
-//                   </button>
-//                   <button class="btn btn-light btn-block" type="button">
-//                   <a href="#" class="whatsapp-btn">
-//                     <i class="fa fa-whatsapp" style="color:#4FCE5D;"> Whatsapp</i>
-//                   </a>
-//                 </button>
+export function learnMoreModal(){
+    return (
+        `
+        <div class="modal fade" id="learnMoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">What does Wisook do?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <p><h6>Wisook is a social media platform that enables you to delve deeper into new topics and explore interests with greater comprehension. Rather than being merely a source for breaking news, Wisook is aimed at taking its users deeper into the things that interest and matter to them, helping them learn more about their favorite topics and discover new and interesting things.</h6></p>
+    
+            <p><h6>The platform learns what you love browsing and searching for across the web, to show you even more of what you are interested in.</h6></p>
+    
+            <p> <h6> So entrepreneurs and small business owners can use this site either as a research tool to learn more about their industry and passions, as a networking tool to connect with partners and customers who share their interests or as another way of sharing their content with a specific target audience. From articles and images to videos and music, you can save anything from anywhere on Wisook. As long as it’s on the internet, you can add your favorite things to Wisook.</h6></p>
+            </div>
+    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Ok, Got it</button>
               
-              
-//                   <button class="btn btn-light btn-block" type="button" onclick="Copy();">
-//                     Copy Link
-//                   </button>
-//                   <br>
-//                   <input type="text" id="urlCopied"  style="width:100%; max-width:500px;">
-              
-              
-              
-//                 </div>
-//               </div>
-              
-//             </div>
+            </div>
             
-//           </div>
-//         </div>
-//       </div>
-//         `
-//     )
-// }
+          </div>
+        </div>
+      </div>
+
+        `
+    )
+}
+
+export function privacyModal() {
+    return (
+        `
+        <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Privacy Notice</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <p><h6>This website does not share personal information with third-parties nor does store information is collected about your visit for use other than to analyze content performance through the use of cookies, which you can turn off at anytime by modifying your Internet browser’s settings. The owner is not responsible for the republishing of the content found on this platform on other Web sites or media without permission.
+            <br><br>
+            Comments Policy
+           <br><br>
+           The owner of this platform reserves the right to edit or delete any comments submitted to this platform without notice due to;
+            <br>
+           1. Comments deemed to be spam or questionable spam
+            <br>
+           2. Comments including profanity
+           <br>
+           3. Comments containing language or concepts that could be deemed offensive
+           <br>
+           4. Comments that attack a person individually
+           <br><br>
+           This privacy policy statements is made on [march 24, 2021] and may have a change on the futures with or without notice. You should read this privacy policy on this page on the futures when updated</h6></p>
+            </div>
+    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Ok, Got it</button>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+        `
+    )
+}
