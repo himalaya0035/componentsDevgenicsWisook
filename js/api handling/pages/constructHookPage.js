@@ -8,16 +8,63 @@ const loader = document.getElementById('loader');
 function refreshComments(){
     document.getElementsByClassName('fa-refresh')[0].onclick = async () => {
       document.getElementsByClassName('allComments')[0].innerHTML = await constructSection('https://jsonplaceholder.typicode.com/todos/1',constructHookCommentBox);
+        console.log('yes')
     }
     
+}
+
+async function getAllCollections(){
+    const collectionData = await getJsonData('https://jsonplaceholder.typicode.com/todos/1');
+    let collectionList = ' <option selected disabled value="0">Add in Collection (Optional)</option>';
+    for (let i=0;i<5;i++){
+        collectionList +=    `
+            <option value="${i+1}" id="${i+1}">One</option>
+            `
+    }
+    return collectionList;
+}
+
+function onEnterSendComment(){
+    const addCommentButton = document.getElementById('addCommentButton');
+    const addCommentInputBox = document.getElementById('addCommentInputBox');
+    addCommentInputBox.addEventListener('keypress', (e) => {
+        if (e.key == 'Enter'){
+            addCommentButton.click();
+        }
+    })
+}
+
+function sendCollectionToTheBackend(){
+   const selectTag = document.getElementById('selectC');
+   selectTag.onchange = async () => {
+       if (selectTag.value != 0){  
+        const obj = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }
+         const isPostRequestOk = await postJsonData('https://jsonplaceholder.typicode.com/posts',obj);
+         if (isPostRequestOk){
+             alert('Hook Added to collection');
+         }else {
+             alert('Something went wrong , try again later');
+         }
+       }
+   }
 }
 
 function postComment(){ // give this to priyansh chomu
     const addCommentButton = document.getElementById('addCommentButton');
     const addCommentInputBox = document.getElementById('addCommentInputBox');
     addCommentButton.onclick = async () => {
-        await postJsonData();
+        const obj = {
+            title: 'foo',
+            body: 'bar',
+            userId: 1,
+        }
+        await postJsonData('https://jsonplaceholder.typicode.com/posts',obj);
         document.getElementsByClassName('fa-refresh')[0].click();
+        
     }
     addCommentButton.disabled=true;
     addCommentInputBox.oninput = () => {
@@ -36,6 +83,7 @@ async function constructHookUserAndDesc(data,urlTwo){
     let userHtml = userCard();
     let hookDescAndStatsHtml = hookDescription();
     let commentSectionData = await constructSection(urlTwo,constructHookCommentBox);
+    let collectionList = await getAllCollections();
     return (
         `
         <div class="singleHookContainer">
@@ -45,7 +93,10 @@ async function constructHookUserAndDesc(data,urlTwo){
             </div>
             <div class="userAndComments">
                 ${userHtml}
-                <div class="commentsSection">
+                <select id="selectC" style="width:100%; padding:5px 10px; border-radius:10px; margin-top:10px;">
+                    ${collectionList}
+                </select>
+                <div class="commentsSection" style="margin-top:10px;">
                     <div class="commentStatsAndRefresh" style="padding: 10px; background: gray; color: white; padding-bottom: 0px; display: flex; justify-content: space-between; align-items: center;">
                         <h6>3.2k Comments</h6>
                         <i class="fa fa-refresh" title="refresh" style="margin-bottom: 8px;"></i>
@@ -109,6 +160,9 @@ async function constructHookPage(urlOne,urlTwo){
     utility.manageAddHookModalPreveiw();
     utility.loadLoginModalJs();
     utility.toggleFollowBtn();
+    postComment()
+    sendCollectionToTheBackend();
+    onEnterSendComment();
     refreshComments();
 }
 

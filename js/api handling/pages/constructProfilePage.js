@@ -25,7 +25,7 @@ function constructTopProfileBody(){ // data here
         `
         <div class="topProfileBody">
             <div class="image profileImage">
-                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
+                <img alt="user Profile image" src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                  class="rounded" />
                 <div class="nameAndCredential">
                     <h3>Himalaya Gupta</h3>

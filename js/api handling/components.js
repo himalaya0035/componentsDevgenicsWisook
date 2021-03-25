@@ -1,5 +1,5 @@
 export function constructSidebar(){
-    let isAuthenticated = !false;
+    let isAuthenticated = false;
     const profileData = constrcutSidebarProfileSection();
     const intrestSection = constructSidebarIntrestSection();
     const sidebarFooterOptions = getSidebarOptions(isAuthenticated);
@@ -203,7 +203,7 @@ export function userCard(data){
         `
         <div class="card p-3">
             <div class="d-flex align-items-center">
-                <div class="image"> <img
+                <div class="image"> <img alt="User Profile Image"
                         src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                         class="rounded" > </div>
                 <div class="ml-3 w-100">
@@ -340,7 +340,7 @@ export function addHookModal(){
                         <p
                             style="position: absolute; font-weight: bold; top: 5px; color: #f2f2f2; left: 12px; font-size: 18px; letter-spacing: 2px;">
                             Preview</p>
-                        <a class="close" style="position: absolute; right: 12px; top:5px; color: #f2f2f2;"
+                        <a class="close" href="#" style="position: absolute; right: 12px; top:5px; color: #f2f2f2;"
                             data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </a>
@@ -759,7 +759,7 @@ export function hookDescription(){
                 <div class="popularityScore"><i class="fa fa-bullseye"></i> 88% Score</div>
             </div>
             <div class="descHook">
-                <p>Learn modern JavaScript from scratch, and practice in an intuitive environment. The challenges are inspired by real-world projects to make sure that you're learning the best practices, one step at a time. Try the first 42 lessons, challenges, projects & flashcards for free. Upgrade to Pro Services ...</p>
+                <p> Learn modern JavaScript from scratch, and practice in an intuitive environment. The challenges are inspired by real-world projects to make sure that you're learning the best practices, one step at a time. Try the first 42 lessons, challenges, projects & flashcards for free. Learn modern JavaScript from scratch, and practice in an intuitive environment. The challenges are inspired by real-world projects to make sure that you're learning the best practices, one step at a time. Try the first 42 lessons, challenges, projects & flashcards for free. Upgrade to Pro Services ...</p>
             </div>
         </div>
         `
@@ -802,8 +802,8 @@ export function createCollectionCard(){
         return (
             `
             <a class="card1" href="#">
-                <div class="collection">
-                <img src="https://th.bing.com/th/id/OIP.ZMIkHl9meMnoVEQSbBgTBgHaEK?w=271&h=180&c=7&o=5&pid=1.7">
+                <div class="fcollection">
+                <img alt="collections image" src="https://th.bing.com/th/id/OIP.ZMIkHl9meMnoVEQSbBgTBgHaEK?w=271&h=180&c=7&o=5&pid=1.7">
                 </div>
         
                 <div class="collectionOverlay"></div>
