@@ -191,6 +191,7 @@ export function manageHooksClickEvents(classOfElement,toggleClass, existingClass
             faElement.classList.toggle(toggleClass);
             faElement.classList.toggle(existingClass)
           }
+          
       }else {
         alert('Something went wrong, please try again later');
       }
@@ -634,7 +635,7 @@ function addTitleAndUrlTobutton(title,url){
     sharingButtons[i].setAttribute('data-title',title);
     sharingButtons[i].setAttribute('data-url',url);
   }
-  document.getElementById('copyUrl').value = 'Copy URL : ' + url;
+  document.getElementById('copyUrl').value = url;
 }
 
 export function shareHookToVariousPlatforms(){

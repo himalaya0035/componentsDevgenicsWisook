@@ -167,10 +167,10 @@ export function hookCard(){  //data here
                 <div class="hookOverlay"></div>
             </div>
             <div class="hookStats">
-                <div class="statSection like" title="Like hook">
+                <div class="statSection like" title="Like / Dislike hook">
                     <i class="fa fa-heart-o"></i>
                 </div>
-                <div class="statSection bookmark" title="Bookmark Hook">
+                <div class="statSection bookmark" title="Bookmark / Unbookmarked Hook">
                     <i class="fa fa-bookmark-o"></i>
                 </div>
                 <div class="statSection share" data-toggle="modal" data-target="#shareModal" title="Share Hook">
