@@ -163,7 +163,7 @@ export function hookCard(){  //data here
                 <img alt="" src="https://miro.medium.com/max/875/0*SvFmcAzTaRqT1fKD.jpg"
                     draggable="false">
                 <h5 class="hookTitle">Learn Js The modern Way Learn Js The modern Way</h5>
-                <a href="#"><i class="fa fa-expand  openHook" title="view hook"></i></a>
+                <a href="hook/1"><i class="fa fa-expand  openHook" title="view hook"></i></a>
                 <div class="hookOverlay"></div>
             </div>
             <div class="hookStats">

@@ -643,7 +643,7 @@ export function shareHookToVariousPlatforms(){
     shareOnHook[i].onclick = (e) => {
       const parentOne = e.target.closest('.hookPost');
       const title = parentOne.getElementsByClassName('hookTitle')[0].innerText;
-      const url = parentOne.getElementsByClassName('redirect')[0].getElementsByTagName('a')[0].href;
+      const url = parentOne.getElementsByClassName('hookImgHolder')[0].getElementsByTagName('a')[0].href;
       addTitleAndUrlTobutton(title,url);
     }
   }
